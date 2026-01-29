@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Suite | LabAx - Intelligent Laboratory Management</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #F8FAFC;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            padding: 8rem 0 6rem;
+            background: radial-gradient(circle at top right, #F0FDFA 0%, #FFF 40%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* Full-Width Product Sections */
+        .product-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+            position: relative;
+        }
+
+        /* Pattern Side - Fills entire half */
+        .product-visual {
+            position: relative;
+            background: url('assets/images/hero-pattern.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Subtle dot pattern overlay */
+        .product-visual::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.3;
+        }
+
+        .product-icon {
+            position: relative;
+            z-index: 2;
+            font-size: 6rem;
+            color: #fff;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Content Side */
+        .product-content {
+            padding: 5rem 6rem;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-title {
+            font-family: var(--font-heading);
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .product-description {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Reverse layout for alternating sections */
+        .product-section.reverse {
+            direction: rtl;
+        }
+
+        .product-section.reverse .product-content {
+            direction: ltr;
+        }
+
+        /* Mirror the pattern for reverse sections */
+        .product-section.reverse .product-visual {
+            transform: scaleX(-1);
+        }
+
+        /* Flip the icon back so it's not mirrored */
+        .product-section.reverse .product-icon {
+            transform: scaleX(-1);
+        }
+
+        /* Product Subtitle */
+        .product-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Benefit Tabs */
+        .benefit-tabs {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.875rem 1.5rem;
+            background: #F8FAFC;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            background: #F0FDFA;
+            border-color: #14B8A6;
+            color: #14B8A6;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%);
+            border-color: #14B8A6;
+            color: white;
+            box-shadow: 0 4px 12px rgba(20, 184, 166, 0.3);
+        }
+
+        .tab-btn i {
+            font-size: 1.125rem;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Benefit List */
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefit-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.875rem 0;
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .benefit-list li i {
+            color: #14B8A6;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-section {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .product-section.reverse {
+                direction: ltr;
+            }
+
+            .product-visual {
+                min-height: 400px;
+            }
+
+            .product-content {
+                padding: 3rem 2rem;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .product-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link active">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-content">
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 1rem 0;">
+                Comprehensive
+                Laboratory Ecosystem</h1>
+        </div>
+    </header>
+
+    <!-- Product 1: LabAx Core -->
+    <section class="product-section">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-database"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx Core</h2>
+            <p class="product-subtitle">Digital backbone for lab operations, manages samples, workflows, and experiment
+                data. Built for GLP, GMP, ISO 17025 compliance and multi-lab scalability.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="core-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="core-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="core-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="core-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Simplifies sample tracking and reduces manual entry
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Provides instant visibility into experiment status</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Reduces paperwork with electronic logs</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="core-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Auto-generates maintenance and calibration schedules
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Integrates with instruments for real-time data</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Simplifies quality check documentation</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="core-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Centralized data hub ensures transparency</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Accelerates audits and reduces errors</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Enables consistent SOP adherence across labs</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 2: LabAx AI -->
+    <section class="product-section reverse">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-brain"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx AI</h2>
+            <p class="product-subtitle">AI/ML engine for predictive maintenance, anomaly detection, experiment
+                optimization, and yield improvement. Provides insights to suggest optimal methods.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="ai-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="ai-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="ai-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="ai-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Provides insights on which parameters yield better
+                        results</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Flags unusual patterns in experiment data</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Learns from past data to suggest optimal methods</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="ai-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Predicts when instruments need calibration or repair
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Detects anomalies and avoids equipment failure
+                        surprises</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Helps track workload and performance metrics</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="ai-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Improves overall lab efficiency and throughput</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Provides predictive insights and smart resource
+                        allocation</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Enhances innovation through data-driven decision making
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 3: LabAx Insight -->
+    <section class="product-section">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-chart-line"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx Insight</h2>
+            <p class="product-subtitle">Embedded Power BI dashboards for real-time analytics, trend monitoring, and
+                compliance visualization. Track KPIs and make data-driven decisions.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="insight-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="insight-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="insight-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="insight-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> View equipment uptime and performance visually</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Compare past vs. present outcomes quickly</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Real-time lab KPI tracking</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="insight-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Insights into instrument utilization and error rates
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Track workload and performance metrics</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Improved visibility for proactive maintenance</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="insight-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Enables leadership to make data-driven decisions</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Provides visibility and transparency for audits</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Performance analytics support strategic planning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 4: LabAx Flow -->
+    <section class="product-section reverse">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx Flow</h2>
+            <p class="product-subtitle">Automation engine integrating Power Automate, Dataverse, and APIs — linking HR,
+                ERP, LIMS, and instruments. Streamlines workflows across sites.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="flow-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="flow-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="flow-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="flow-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Removes repetitive administrative tasks</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Automatically triggers next steps when samples are
+                        logged</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Streamlines approval processes</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="flow-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Reduces manual data entry between systems</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Helps automate alerting and documentation workflows
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Eliminates redundant data entry</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="flow-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Enhances inter-departmental collaboration</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Streamlines processes and reduces manual workflows</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Improves collaboration across sites</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 5: LabAx Edge -->
+    <section class="product-section">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-microchip"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx Edge</h2>
+            <p class="product-subtitle">IoT connectivity capturing real-time sensor data (temp, vibration, usage).
+                Supports OPC UA, MQTT, Modbus for comprehensive device integration.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="edge-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="edge-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="edge-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="edge-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Notifies staff of environmental changes affecting
+                        samples</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Provides constant monitoring without manual checks</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Gives visibility into instrument health and usage
+                        history</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="edge-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Enables real-time condition monitoring and quick
+                        response</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Reduces maintenance burden through remote diagnostics
+                    </li>
+                    <li><i class="fa-solid fa-check-circle"></i> Helps track instrument performance trends</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="edge-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Enables proactive asset management</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Reduces downtime and protects sample integrity</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Ensures compliance through continuous monitoring</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product 6: LabAx Cloud -->
+    <section class="product-section reverse">
+        <div class="product-visual">
+            <i class="product-icon fa-solid fa-cloud"></i>
+        </div>
+        <div class="product-content">
+            <h2 class="product-title">LabAx Cloud</h2>
+            <p class="product-subtitle">SaaS deployment for scalability, security, and collaboration across multi-site
+                organizations. Access data securely from anywhere with enterprise-grade protection.</p>
+
+            <!-- Tab Navigation -->
+            <div class="benefit-tabs">
+                <button class="tab-btn active" data-tab="cloud-staff">
+                    <i class="fa-solid fa-user-group"></i> Lab Staff
+                </button>
+                <button class="tab-btn" data-tab="cloud-tech">
+                    <i class="fa-solid fa-user-gear"></i> Technicians
+                </button>
+                <button class="tab-btn" data-tab="cloud-org">
+                    <i class="fa-solid fa-building"></i> Organization
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="cloud-staff">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Access lab data securely from anywhere</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Simplifies login and data sharing across sites</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Eliminates need for local IT maintenance</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="cloud-tech">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Allows remote monitoring of instrument health</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Enables faster onboarding with cloud accessibility</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Provides flexibility in scaling operations</li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="cloud-org">
+                <ul class="benefit-list">
+                    <li><i class="fa-solid fa-check-circle"></i> Reduces IT overhead and ensures uptime</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Supports multi-site collaboration</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Flexibility to scale across sites</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Ready to Transform Your Laboratory?</h2>
+            <p class="section-description" style="margin: 1.5rem auto;">Explore how LabAx can drive efficiency,
+                compliance, and innovation across your organization.</p>
+            <div class="mt-lg">
+                <a href="demo.html" class="btn btn-primary btn-lg">Book a Demo</a>
+                <a href="contact.html" class="btn btn-outline btn-lg ml-md">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                const tabId = this.getAttribute('data-tab');
+                const parentSection = this.closest('.product-content');
+
+                // Remove active class from all tabs and content in this section
+                parentSection.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                parentSection.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About LabAx - The Future of Laboratory Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- Supercharged About Page Styles --- */
+
+        /* Entrance Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 80% 20%, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(13, 148, 136, 0.1) 0%, transparent 50%);
+            padding: 10rem 0 6rem;
+        }
+
+        /* Ecosystem Feature Grid */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-box {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-box:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
+        }
+
+        .feature-box i {
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--primary);
+            background: rgba(20, 184, 166, 0.1);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+        }
+
+        /* Impact Persona Sections */
+        .persona-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 5rem;
+        }
+
+        .persona-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem;
+            background: var(--surface);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .persona-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .persona-card:nth-child(even) .persona-content {
+            direction: ltr;
+        }
+
+        .persona-header span {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 4rem;
+            opacity: 0.1;
+            display: block;
+            margin-bottom: -1rem;
+        }
+
+        .persona-benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-item i {
+            color: var(--accent);
+            margin-top: 0.25rem;
+        }
+
+        /* Advanced Data Vis */
+        .chart-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-circle-wrap {
+            text-align: center;
+            padding: 2rem;
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .pulse-logo {
+            animation: pulseTeal 3s infinite;
+        }
+
+        @keyframes pulseTeal {
+            0% {
+                box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(20, 184, 166, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="products.html" class="nav-link">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Supercharged Hero -->
+    <header class="about-hero">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal active">
+                    <span class="section-badge">Our Mission</span>
+                    <h1 style="font-size: 4.5rem; line-height: 1.1; margin: 1.5rem 0;">Dedicated to Lab <span
+                            class="text-gradient">Excellence</span></h1>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 550px;">
+                        LabAx is a comprehensive LIMS designed to streamline laboratory operations, enhance research
+                        productivity, and ensure compliance with industry standards.
+                    </p>
+                    <div class="mt-lg" style="display: flex; gap: 2rem;">
+                        <div class="counter-item">
+                            <h3 style="color: var(--primary); font-size: 2rem;">99.9%</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.6;">System Uptime</p>
+                        </div>
+                        <div class="counter-item">
+                            <h3 style="color: var(--primary); font-size: 2rem;">12+</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.6;">Modules</p>
+                        </div>
+                        <div class="counter-item">
+                            <h3 style="color: var(--primary); font-size: 2rem;">50%</h3>
+                            <p style="font-size: 0.9rem; opacity: 0.6;">Efficiency Gain</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal active" style="transition-delay: 0.2s;">
+                    <!-- Rotating Visual Hub -->
+                    <div class="orbit-container" style="transform: scale(0.9);">
+                        <div class="orbit-center pulse-logo">
+                            <i class="fa-solid fa-microscope" style="font-size: 3.5rem;"></i>
+                        </div>
+                        <div class="orbit-rotator">
+                            <div class="orbit-item item-1"><i class="fa-solid fa-flask"></i></div>
+                            <div class="orbit-item item-2"><i class="fa-solid fa-dna"></i></div>
+                            <div class="orbit-item item-3"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="orbit-item item-4"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="orbit-item item-5"><i class="fa-solid fa-wifi"></i></div>
+                            <div class="orbit-item item-6"><i class="fa-solid fa-user-doctor"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Platform Ecosystem (Detailed Stacking Cards) -->
+    <section class="sticky-scroll-section bg-darker">
+        <div class="sticky-container">
+            <div class="sticky-header reveal">
+                <span class="section-badge">Platform Architecture</span>
+                <h2>Comprehensive Laboratory Ecosystem</h2>
+                <p class="section-description">A digital backbone for modern research, spanning every aspect of
+                    laboratory administration and automation. Experience how our interconnected modules form a unified
+                    laboratory environment.</p>
+            </div>
+
+            <!-- Stacking Cards -->
+
+            <!-- Card 1: Instrument Management -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 100px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Precision Tools</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Instrument Management</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Track and manage laboratory instruments, maintenance schedules, and calibration records with
+                        absolute precision. Our system ensures your hardware is always at peak performance.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Automated maintenance
+                            scheduling</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Real-time calibration status
+                            tracking</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Usage history and utilization
+                            heatmaps</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-screwdriver-wrench"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15; animation: rotatePattern 10s linear infinite;"></i>
+                </div>
+            </div>
+
+            <!-- Card 2: Sample Tracking -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 120px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge" style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">Chain
+                        of Custody</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Sample Tracking</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Complete sample lifecycle management from intake to disposal. Use QR codes and real-time status
+                        updates to maintain a perfect audit trail.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> QR/Barcode generation and
+                            scanning</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Infinite parent-child sample
+                            relationships</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Location tracking down to the
+                            exact shelf/well</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-vials" style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 3: Inventory Control -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 140px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Resource Planning</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Inventory Control</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Automated inventory management that keeps your lab running without interruptions. Monitor
+                        reagent levels and get proactive alerts for low stocks.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Automated low-stock
+                            procurement triggers</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Expiration date monitoring
+                            and alerts</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Vendor performance and cost
+                            analytics</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-boxes-stacked"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 4: Project Tracking -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 160px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">Collaboration Hub</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Project & Experiment
+                        Tracking</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Organize and monitor projects and experiments with collaborative tools. Seamlessly bridge the
+                        gap between planning and execution.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Kanban and Gantt
+                            visualization for lab work</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Shared experiment protocols
+                            and SOPs</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Result aggregation and data
+                            exports</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-folder-tree"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 5: IoT Integration -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 180px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Connected Intelligence</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">IOT Integration</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Real-time monitoring and control of connected laboratory devices. Turn your lab into a living,
+                        responsive ecosystem.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Live sensor telemetry (Temp,
+                            Humidity, Vibration)</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Remote device control and
+                            panic triggers</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Historical performance data
+                            for predictive AI</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-satellite-dish"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 6: Multi-Tenant Support -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 200px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">Enterprise Scale</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Multi-Tenant Architecture
+                    </h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Securely manage multiple laboratories, sites, or external partners within a single, powerful
+                        platform. Scale without complexity.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Complete data isolation
+                            across organizations</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Hierarchical permission and
+                            role structures</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Shared resource pools and
+                            procurement hubs</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-users-viewfinder"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 7: Procurement System -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 220px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge" style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Supply
+                        Chain</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Procurement System</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Streamline vendor management and purchase order workflows. Bridging the gap between scientific
+                        needs and budgetary approvals.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Multi-level approval
+                            workflows</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Direct vendor API
+                            integrations</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Budget tracking and variance
+                            reporting</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-cart-shopping"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 8: Training Management -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 240px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">Knowledge Capital</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Training Management</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Track certifications, training records, and compliance requirements. Ensuring every lab member
+                        is qualified for the task at hand.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Automated certification
+                            expiry alerts</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Integrated LMS for safety
+                            videos and tests</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Skill matrix dashboard for
+                            lab managers</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-user-graduate"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 9: License Management -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 260px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge" style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Asset
+                        Security</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">License Management</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Track software licenses, renewals, and compliance across your organization. Avoid downtime due
+                        to expired scientific software.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Centralized repo for license
+                            keys & contracts</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Seat usage tracking and
+                            optimization</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Vendor renewal notification
+                            engine</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-key" style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 10: Configurable UI -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 280px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge" style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">User
+                        Empowerment</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Configurable UI</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Customize menu items and workflows to match your specific laboratory needs. A platform that
+                        adapts to you, not the other way around.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Drag-and-drop dashboard
+                            builder</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Personalized navigation for
+                            different roles</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> White-labeling options for
+                            enterprises</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-compass" style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 11: User Approvals -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 300px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge"
+                        style="margin-bottom: 1rem; background: rgba(20, 184, 166, 0.1);">Gatekeeper</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">User Approval Workflow</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Streamlined user registration with admin approval and role assignment. Maintain strict security
+                        protocols without administrative overhead.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Automated onboarding
+                            verification</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> SSO and SAML 2.0 integration
+                        </li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Granular temporary access
+                            tokens</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-user-check"
+                        style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+
+            <!-- Card 12: Announcements -->
+            <div class="sticky-card"
+                style="background: var(--surface); border-color: var(--border-color); top: 320px; height: 600px;">
+                <div class="card-content">
+                    <span class="section-badge" style="margin-bottom: 1rem; background: rgba(45, 212, 191, 0.1);">Lab
+                        Broadcast</span>
+                    <h3 class="card-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Global Announcements</h3>
+                    <p class="card-desc" style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                        Broadcast important updates and health notifications to all lab users. Keeping everyone
+                        informed and aligned.
+                    </p>
+                    <ul class="feature-list" style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Targeted site-specific
+                            broadcasts</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Emergency override alert
+                            system</li>
+                        <li style="margin-bottom: 0.75rem;"><i class="fa-solid fa-check"
+                                style="color: var(--primary); margin-right: 0.75rem;"></i> Read-receipt tracking for
+                            audits</li>
+                    </ul>
+                </div>
+                <div class="card-visual"
+                    style="flex: 1; background: rgba(20, 184, 166, 0.05); border-left: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+                    <i class="fa-solid fa-bullhorn" style="font-size: 8rem; color: var(--primary); opacity: 0.15;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data & Impact Visualization -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Real-World Results</span>
+                <h2>Quantifiable Improvements</h2>
+                <p class="section-description">Our clients consistently report significant operational breakthroughs
+                    after implementing LabAx.</p>
+            </div>
+
+            <div class="chart-row">
+                <div class="stat-circle-wrap reveal">
+                    <h4 style="margin-bottom: 2rem;">Cost Reduction</h4>
+                    <div class="stats-circle-graph animate"
+                        style="margin: 0 auto; background: conic-gradient(var(--primary) 50%, #1a1a1a 0%);">
+                        <span class="stat-value">50%</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Inventory waste
+                        reduction within 6 months.</p>
+                </div>
+                <div class="stat-circle-wrap reveal" style="transition-delay: 0.1s;">
+                    <h4 style="margin-bottom: 2rem;">Documentation Speed</h4>
+                    <div class="stats-circle-graph animate"
+                        style="margin: 0 auto; background: conic-gradient(var(--accent) 75%, #1a1a1a 0%);">
+                        <span class="stat-value">3x</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Faster compliance
+                        reporting and audit readiness.</p>
+                </div>
+                <div class="stat-circle-wrap reveal" style="transition-delay: 0.2s;">
+                    <h4 style="margin-bottom: 2rem;">Instrument Uptime</h4>
+                    <div class="stats-circle-graph animate"
+                        style="margin: 0 auto; background: conic-gradient(#fff 99%, #1a1a1a 0%);">
+                        <span class="stat-value">99%</span>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Improvement in
+                        equipment availability via AI-Predict.</p>
+                </div>
+            </div>
+
+            <!-- Professional Line Trends -->
+            <div class="chart-container reveal mt-xl" style="padding: 4rem;">
+                <div class="grid-2">
+                    <div class="chart-main">
+                        <h3 style="margin-bottom: 2rem;">Efficiency Trajectory</h3>
+                        <div class="graph-line" style="height: 300px; position: relative;">
+                            <svg viewBox="0 0 1000 300" style="width: 100%; height: 100%; overflow: visible;">
+                                <!-- Grid Lines -->
+                                <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.05)" />
+                                <line x1="0" y1="150" x2="1000" y2="150" stroke="rgba(255,255,255,0.05)" />
+                                <line x1="0" y1="50" x2="1000" y2="50" stroke="rgba(255,255,255,0.05)" />
+
+                                <!-- Trend Path -->
+                                <path d="M0,280 Q250,250 400,150 T800,50 L1000,20" fill="none" stroke="var(--primary)"
+                                    stroke-width="4"
+                                    style="stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: drawLine 4s forwards;" />
+
+                                <!-- Points -->
+                                <circle cx="0" cy="280" r="6" fill="var(--primary)" />
+                                <circle cx="400" cy="150" r="6" fill="var(--primary)" />
+                                <circle cx="800" cy="50" r="6" fill="var(--primary)" />
+                                <circle cx="1000" cy="20" r="6" fill="var(--primary)" />
+
+                                <!-- Glow Area -->
+                                <path d="M0,280 Q250,250 400,150 T800,50 L1000,20 L1000,300 L0,300 Z"
+                                    fill="url(#trendGradient)" style="opacity: 0.1;" />
+
+                                <defs>
+                                    <linearGradient id="trendGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:var(--primary);stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <!-- Time Labels -->
+                            <div
+                                style="display: flex; justify-content: space-between; margin-top: 1.5rem; color: var(--text-tertiary); font-size: 0.85rem; font-family: 'Outfit';">
+                                <span>Initial Deployment</span>
+                                <span>Q3 Optimization</span>
+                                <span>Year 1 Integration</span>
+                                <span>Platform Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-sidebar" style="padding-left: 2rem; border-left: 1px solid var(--border-color);">
+                        <h4 style="margin-bottom: 1.5rem; color: var(--primary);">Success Benchmarks</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1.5rem;">
+                                <strong style="display: block; color: var(--text-primary);">Manual Entry
+                                    Reduction</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Automated triggers in LabAx
+                                    Flow eliminate 40% of repetitive data entry across sites.</p>
+                            </li>
+                            <li style="margin-bottom: 1.5rem;">
+                                <strong style="display: block; color: var(--text-primary);">Audit Readiness</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Immutable logs ensure ISO
+                                    17025 compliance is maintained in real-time, reducing audit prep from weeks to
+                                    hours.</p>
+                            </li>
+                            <li>
+                                <strong style="display: block; color: var(--text-primary);">Asset Optimization</strong>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">Predictive maintenance
+                                    through LabAx Edge increases instrument life-span by an average of 35%.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empowered Stakeholders (Detailed Personas) -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-badge">Impact Profiles</span>
+                <h2>Who LabAx Empowers</h2>
+                <p class="section-description">Detailed value propositions for every stakeholder in the scientific value
+                    chain.</p>
+            </div>
+
+            <div class="persona-container">
+                <!-- Lab Staff -->
+                <div class="persona-card reveal">
+                    <div class="persona-image">
+                        <i class="fa-solid fa-users-gear"
+                            style="font-size: 6rem; color: var(--primary); opacity: 0.2;"></i>
+                        <div class="persona-header">
+                            <span>01</span>
+                            <h3>Lab Staff</h3>
+                        </div>
+                    </div>
+                    <div class="persona-content">
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">Reduces
+                            administrative friction, allowing scientists to focus on breakthrough research.</p>
+                        <div class="persona-benefits">
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Instant experiment status visibility</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Seamless sample tracking & logging</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Paperless compliance workflows</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Zero-effort inventory requests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technicians -->
+                <div class="persona-card reveal" style="direction: rtl;">
+                    <div class="persona-image">
+                        <i class="fa-solid fa-flask-vial"
+                            style="font-size: 6rem; color: var(--primary); opacity: 0.2;"></i>
+                        <div class="persona-header">
+                            <span>02</span>
+                            <h3>Technicians</h3>
+                        </div>
+                    </div>
+                    <div class="persona-content" style="direction: ltr;">
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">Automates
+                            maintenance and integration, ensuring instruments are always ready.</p>
+                        <div class="persona-benefits">
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Auto-generated calibration schedules</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Real-time data integration with sensors</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Proactive maintenance alerts</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Simplified QC documentation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organization -->
+                <div class="persona-card reveal">
+                    <div class="persona-image">
+                        <i class="fa-solid fa-building-shield"
+                            style="font-size: 6rem; color: var(--primary); opacity: 0.2;"></i>
+                        <div class="persona-header">
+                            <span>03</span>
+                            <h3>Organization</h3>
+                        </div>
+                    </div>
+                    <div class="persona-content">
+                        <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-secondary);">Enables
+                            consistent SOP adherence and data-driven strategic planning across sites.</p>
+                        <div class="persona-benefits">
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Centralized data hub for transparency</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Significant reduction in audit durations</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Predictive insights for resource planning</p>
+                            </div>
+                            <div class="benefit-item"><i class="fa-solid fa-check"></i>
+                                <p>Accelerated scientific throughput</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+        <div class="container text-center reveal">
+            <h2>Ready to Evolve Your Laboratory?</h2>
+            <p class="section-description" style="margin: 1.5rem auto;">Join leading laboratory organizations
+                transforming their operations with LabAx.</p>
+            <div class="mt-lg">
+                <a href="demo.html" class="btn btn-primary btn-lg">Book a personalized Demo</a>
+                <a href="contact.html" class="btn btn-outline btn-lg ml-md">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Consistent) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Simple Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

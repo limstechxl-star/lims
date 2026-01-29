@@ -1,0 +1,24 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="300" r="280" fill="url(#grad1)" opacity="0.1"/>
+<path d="M300 150 L386 200 L386 300 L300 350 L214 300 L214 200 Z" fill="#0D9488" fill-opacity="0.1"/>
+<path d="M300 220 L343 245 L343 295 L300 320 L257 295 L257 245 Z" fill="#0D9488" fill-opacity="0.2"/>
+<circle cx="300" cy="100" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+<circle cx="473" cy="200" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+<circle cx="473" cy="400" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+<circle cx="300" cy="500" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+<circle cx="127" cy="400" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+<circle cx="127" cy="200" r="40" fill="#14B8A6" fill-opacity="0.1"/>
+
+<path d="M300 100 L473 200" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M473 200 L473 400" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M473 400 L300 500" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M300 500 L127 400" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M127 400 L127 200" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M127 200 L300 100" stroke="#0F766E" stroke-opacity="0.2" stroke-width="2" stroke-dasharray="5 5"/>
+<defs>
+<radialGradient id="grad1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 300) rotate(90) scale(280)">
+<stop stop-color="#14B8A6"/>
+<stop offset="1" stop-color="#CCFBF1"/>
+</radialGradient>
+</defs>
+</svg>

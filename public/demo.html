@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a demo of LabAx - The Intelligent Laboratory Management System">
+    <title>Request Demo - LabAx</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Simple Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo active">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Demo Request Section -->
+    <section class="demo-section">
+        <div class="demo-container">
+            <!-- Left Side - Form -->
+            <div class="demo-form-container">
+                <div class="demo-header">
+                    <h1>Request a Demo</h1>
+                    <p>Fill out the form below and our team will get back to you within 24 hours to schedule your
+                        personalized LabAx demonstration.</p>
+                </div>
+
+                <form id="demoForm" class="demo-form">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Personal Information</h3>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="jobTitle">Job Title <span class="required">*</span></label>
+                            <input type="text" id="jobTitle" name="jobTitle" required placeholder="Laboratory Manager">
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <!-- Organization Details -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Organization Details</h3>
+
+                        <div class="form-group">
+                            <label for="organizationName">Organization Name <span class="required">*</span></label>
+                            <input type="text" id="organizationName" name="organizationName" required
+                                placeholder="Acme Research Labs">
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="industryType">Industry Type <span class="required">*</span></label>
+                                <select id="industryType" name="industryType" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                    <option value="biotechnology">Biotechnology</option>
+                                    <option value="clinical">Clinical/Medical</option>
+                                    <option value="academic">Academic/Research</option>
+                                    <option value="chemical">Chemical</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="environmental">Environmental</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organizationSize">Organization Size <span class="required">*</span></label>
+                                <select id="organizationSize" name="organizationSize" required>
+                                    <option value="">Select Size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="500+">500+ employees</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country <span class="required">*</span></label>
+                            <select id="country" name="country" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="IN">India</option>
+                                <option value="CN">China</option>
+                                <option value="JP">Japan</option>
+                                <option value="AU">Australia</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <!-- Demo Preferences -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Demo Preferences</h3>
+
+                        <div class="form-group">
+                            <label>Interested Products <span class="required">*</span></label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="Core" id="product-core">
+                                    <label for="product-core">LabAx Core</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="AI" id="product-ai">
+                                    <label for="product-ai">LabAx AI</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="Insight"
+                                        id="product-insight">
+                                    <label for="product-insight">LabAx Insight</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="Flow" id="product-flow">
+                                    <label for="product-flow">LabAx Flow</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="Edge" id="product-edge">
+                                    <label for="product-edge">LabAx Edge</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" name="interestedProducts" value="Cloud" id="product-cloud">
+                                    <label for="product-cloud">LabAx Cloud</label>
+                                </div>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Demo Date</label>
+                                <input type="date" id="preferredDate" name="preferredDate">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time</label>
+                                <select id="preferredTime" name="preferredTime">
+                                    <option value="">Select Time</option>
+                                    <option value="morning">Morning (9 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
+                                    <option value="evening">Evening (5 PM - 8 PM)</option>
+                                </select>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="4"
+                                placeholder="Tell us about your specific needs or questions..."></textarea>
+                            <span class="error-message"></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Request Demo</span>
+                        <span class="btn-loader" style="display: none;">
+                            <span class="spinner"></span> Submitting...
+                        </span>
+                    </button>
+
+                    <!-- Success/Error Messages -->
+                    <div class="form-message success-message" id="successMessage" style="display: none;">
+                        <div class="message-icon"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4>Demo Request Submitted Successfully!</h4>
+                            <p>Thank you for your interest in LabAx. Our team will contact you within 24 hours to
+                                schedule your personalized demonstration.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-message error-message-box" id="errorMessage" style="display: none;">
+                        <div class="message-icon"><i class="fa-solid fa-xmark"></i></div>
+                        <div>
+                            <h4>Submission Failed</h4>
+                            <p id="errorText">Please check your information and try again.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Right Side - Info Panel -->
+            <div class="demo-info-panel">
+                <div class="info-card">
+                    <h3>What to Expect</h3>
+                    <ul class="info-list">
+                        <li>
+                            <span class="info-icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <div>
+                                <strong>Personalized Demo</strong>
+                                <p>30-45 minute live demonstration tailored to your laboratory's specific needs</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="info-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                            <div>
+                                <strong>Expert Guidance</strong>
+                                <p>Our product specialists will answer all your questions and show you best practices
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="info-icon"><i class="fa-solid fa-bullseye"></i></span>
+                            <div>
+                                <strong>Custom Solutions</strong>
+                                <p>Learn how LabAx can be configured to match your unique workflows</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="info-icon"><i class="fa-solid fa-chart-line"></i></span>
+                            <div>
+                                <strong>ROI Analysis</strong>
+                                <p>Discover potential cost savings and efficiency gains for your organization</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card"
+                    style="background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%); color: white;">
+                    <h3 style="color: white;">Why LabAx?</h3>
+                    <ul class="benefit-list-simple">
+                        <li><i class="fa-solid fa-check"></i> 50% reduction in inventory costs</li>
+                        <li><i class="fa-solid fa-check"></i> 40% less equipment downtime</li>
+                        <li><i class="fa-solid fa-check"></i> 99.9% uptime SLA guarantee</li>
+                        <li><i class="fa-solid fa-check"></i> 14-day free trial included</li>
+                        <li><i class="fa-solid fa-check"></i> No credit card required</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Need Help?</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Our team is here to assist you</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:sales@thelabax.com" style="color: #14B8A6;">sales@thelabax.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fa-solid fa-headset"></i>
+                            <div>
+                                <strong>Support</strong>
+                                <a href="mailto:support@thelabax.com" style="color: #14B8A6;">support@thelabax.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Consistent with Home/About) -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+
+</html>

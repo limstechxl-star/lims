@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabAx - Intelligent Laboratory Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <!-- Removed Intelligent LIMS Platform badge as requested -->
+                <h1>The Modern Standard for Laboratory Management</h1>
+                <p class="hero-subtitle">Track, maintain, and optimize your laboratory instruments with ease. Empower
+                    your research teams to achieve breakthrough discoveries.</p>
+                <div class="hero-cta">
+                    <a href="demo.html" class="btn btn-primary">Book a Demo</a>
+                    <a href="products.html" class="btn btn-outline">Explore Products</a>
+                </div>
+            </div>
+
+            <div class="hero-visual fade-in">
+                <div class="orbit-container">
+                    <!-- Dotted Connecting Lines -->
+                    <svg class="orbit-lines" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="250" cy="250" r="180" stroke="#14B8A6" stroke-width="2" stroke-dasharray="8 8"
+                            fill="none" opacity="0.3" />
+                        <line x1="250" y1="250" x2="250" y2="70" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                        <line x1="250" y1="250" x2="405" y2="160" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                        <line x1="250" y1="250" x2="405" y2="340" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                        <line x1="250" y1="250" x2="250" y2="430" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                        <line x1="250" y1="250" x2="95" y2="340" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                        <line x1="250" y1="250" x2="95" y2="160" stroke="#14B8A6" stroke-width="2"
+                            stroke-dasharray="4 4" opacity="0.3" />
+                    </svg>
+
+                    <!-- Center Logo -->
+                    <div class="orbit-center">
+                        <i class="fa-solid fa-microscope pop-in"></i>
+                    </div>
+
+                    <!-- Rotating Container for Icons -->
+                    <div class="orbit-rotator">
+                        <div class="orbit-item item-1 fade-in-delay-1"><i class="fa-solid fa-flask"></i></div>
+                        <div class="orbit-item item-2 fade-in-delay-2"><i class="fa-solid fa-dna"></i></div>
+                        <div class="orbit-item item-3 fade-in-delay-3"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="orbit-item item-4 fade-in-delay-4"><i class="fa-solid fa-server"></i></div>
+                        <div class="orbit-item item-5 fade-in-delay-5"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="orbit-item item-6 fade-in-delay-6"><i class="fa-solid fa-user-doctor"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Detailed Stats Section (New) -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card fade-in">
+                    <span class="metric-value">50%</span>
+                    <span class="metric-label">Cost Reduction</span>
+                    <p class="metric-description">Average operational savings</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <span class="metric-value">99.9%</span>
+                    <span class="metric-label">Uptime SLA</span>
+                    <p class="metric-description">Enterprise-grade reliability</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <span class="metric-value">55%</span>
+                    <span class="metric-label">Efficiency</span>
+                    <p class="metric-description">Increase in lab throughput</p>
+                </div>
+                <div class="metric-card fade-in">
+                    <span class="metric-value">24mo</span>
+                    <span class="metric-label">300% ROI</span>
+                    <p class="metric-description">Rapid return on investment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sticky Scroll Section -->
+    <section class="sticky-scroll-section">
+        <div class="sticky-container">
+            <div class="sticky-header">
+                <!-- Removed Section Badge as requested -->
+                <h2>Integrated Lab Ecosystem</h2>
+                <p class="section-description">Experience how our modules stack up to create a unified laboratory
+                    environment.</p>
+            </div>
+
+            <!-- Card 1: Core -->
+            <div class="sticky-card">
+                <div class="card-content">
+                    <h3 class="card-title">LabAx Core</h3>
+                    <p class="card-desc">The central nervous system of your laboratory. Manage samples, track inventory,
+                        and ensure rigorous compliance with GLP/GMP standards using our immutable audit logs.</p>
+                    <a href="products.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="graph-bars-container">
+                        <div class="graph-bars">
+                            <div class="bar" data-height="40%" style="height: 0%;"></div>
+                            <div class="bar" data-height="60%" style="height: 0%;"></div>
+                            <div class="bar" data-height="50%" style="height: 0%;"></div>
+                            <div class="bar" data-height="85%" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Interactive Overlay Link -->
+                <a href="products.html" class="card-overlay-link" aria-label="Learn about LabAx Core"></a>
+                <div class="card-visual">
+                    <img src="assets/images/card-core.png" alt="LabAx Core Dashboard">
+                </div>
+            </div>
+
+            <!-- Card 2: AI -->
+            <div class="sticky-card">
+                <div class="card-content">
+                    <h3 class="card-title">LabAx AI</h3>
+                    <p class="card-desc">Predictive intelligence that enables proactive maintenance. Our ML models
+                        analyze instrument performance patterns to predict failures before they disrupt your research.
+                    </p>
+                    <a href="products.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="stats-circle-container" style="margin-top: 2rem;">
+                        <div class="stats-circle-graph" data-target="70">
+                            <span class="stat-value">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="products.html" class="card-overlay-link" aria-label="Learn about LabAx AI"></a>
+                <div class="card-visual">
+                    <img src="assets/images/card-ai.png" alt="LabAx AI Robot">
+                </div>
+            </div>
+
+            <!-- Card 3: Insight -->
+            <div class="sticky-card">
+                <div class="card-content">
+                    <h3 class="card-title">LabAx Insight</h3>
+                    <p class="card-desc">Real-time analytics dashboards that visualize your lab's efficiency. Track
+                        KPIs, instrument utilization, and bottleneck detection in one cohesive view.</p>
+                    <a href="products.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="graph-bars-container" style="margin-top: 2rem;">
+                        <div class="graph-bars">
+                            <div class="bar" data-height="30%" style="height: 0%; background: var(--accent);"></div>
+                            <div class="bar" data-height="50%" style="height: 0%; background: var(--accent);"></div>
+                            <div class="bar" data-height="70%" style="height: 0%; background: var(--accent);"></div>
+                            <div class="bar" data-height="90%" style="height: 0%; background: var(--accent);"></div>
+                        </div>
+                    </div>
+                </div>
+                <a href="products.html" class="card-overlay-link" aria-label="Learn about LabAx Insight"></a>
+                <div class="card-visual">
+                    <img src="assets/images/card-insight.png" alt="LabAx Insight Analytics">
+                </div>
+            </div>
+
+            <!-- Card 4: Flow -->
+            <div class="sticky-card">
+                <div class="card-content">
+                    <h3 class="card-title">LabAx Flow</h3>
+                    <p class="card-desc">Automated workflow engine that connects your HR, ERP, and LIMS. Reduce manual
+                        data entry by 90% with intelligent trigger-based automations.</p>
+                    <a href="products.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <span class="card-badge">HR System</span> <i class="fa-solid fa-arrow-right"
+                            style="color: var(--text-tertiary); margin-top: 0.5rem;"></i>
+                        <span class="card-badge">LIMS</span> <i class="fa-solid fa-arrow-right"
+                            style="color: var(--text-tertiary); margin-top: 0.5rem;"></i>
+                        <span class="card-badge">ERP</span>
+                    </div>
+                </div>
+                <a href="products.html" class="card-overlay-link" aria-label="Learn about LabAx Flow"></a>
+                <div class="card-visual">
+                    <img src="assets/images/card-flow.png" alt="LabAx Workflow Network">
+                </div>
+            </div>
+
+            <!-- Card 5: Cloud -->
+            <div class="sticky-card">
+                <div class="card-content">
+                    <h3 class="card-title">LabAx Cloud</h3>
+                    <p class="card-desc">Enterprise-grade cloud infrastructure ensuring your data is accessible, secure,
+                        and backed up across multi-region availability zones.</p>
+                    <a href="products.html" class="btn-text">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="stats-circle-container" style="margin-top: 2rem;">
+                        <div class="stats-circle-graph" data-target="70" style="--conic-color: var(--accent);">
+                            <span class="stat-value">0%</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="products.html" class="card-overlay-link" aria-label="Learn about LabAx Cloud"></a>
+                <div class="card-visual">
+                    <img src="assets/images/card-cloud.png" alt="LabAx Cloud Server">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Section (New Content) -->
+    <section class="section bg-darker">
+        <div class="container">
+            <div class="grid-2">
+                <div class="content-block fade-in">
+                    <span class="section-badge">Why LabAx?</span>
+                    <h2>Designed for Modern Science</h2>
+                    <p>We believe that efficient laboratory management shouldn't be complicated. LabAx combines powerful
+                        features with an intuitive interface.</p>
+                    <ul class="feature-list mt-md">
+                        <li><i class="fa-solid fa-check"></i> <strong>Security First:</strong> End-to-end encryption &
+                            compliance.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>User-Centric:</strong> Designed by lab
+                            professionals.</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Scalable:</strong> Grow from startup to
+                            enterprise.</li>
+                    </ul>
+                    <a href="about.html" class="btn btn-primary mt-lg">About Us</a>
+                </div>
+                <div class="visual-placeholder fade-in">
+                    <!-- Dynamic Radar Animation -->
+                    <div class="radar-scan-container">
+                        <div class="radar-circle c1"></div>
+                        <div class="radar-circle c2"></div>
+                        <div class="radar-circle c3"></div>
+                        <div class="radar-sweep"></div>
+                        <div class="radar-dot d1"></div>
+                        <div class="radar-dot d2"></div>
+                        <div class="radar-dot d3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Columns -->
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

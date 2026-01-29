@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LabAx Intelligent LIMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-hero {
+            padding: 8rem 0 4rem;
+            background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.1) 0%, transparent 60%);
+            text-align: center;
+        }
+
+        .contact-grid {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+
+        .info-panel {
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-method {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            align-items: flex-start;
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(20, 184, 166, 0.1);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .method-content h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .method-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .contact-form-card {
+            background: var(--surface);
+            padding: 3rem;
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .hq-map {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: var(--radius-xl);
+            border: 1px dashed var(--border-color);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="contact-hero">
+        <div class="container">
+            <span class="section-badge fade-in">Contact Us</span>
+            <h1 class="fade-in" style="font-size: 3.5rem; margin-top: 1rem;">Let's Start a Conversation</h1>
+            <p class="section-description fade-in" style="max-width: 800px; margin: 1.5rem auto;">
+                Have questions about how LabAx can transform your laboratory operations? Our scientific and technical
+                experts are here to help.
+            </p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="info-panel">
+                    <h2>Global Support</h2>
+                    <p style="margin-bottom: 3rem; color: var(--text-secondary);">We are dedicated to providing
+                        world-class laboratory management support with a focus on your success.</p>
+
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="method-content">
+                            <h3>Email Us</h3>
+                            <p>sales@thelabax.com<br>support@thelabax.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="method-content">
+                            <h3>Call Us</h3>
+                            <p>+91 (044) 1234 5678<br>Mon-Fri, 9am - 6pm IST</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="method-content">
+                            <h3>Global HQ</h3>
+                            <p>Tech Park, Taramani<br>Chennai, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+
+                    <div class="hq-map">
+                        <i class="fa-solid fa-earth-asia"
+                            style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                        <p style="font-size: 0.9rem;">Serving Laboratories Worldwide</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <h2 style="margin-bottom: 2rem;">Send a Message</h2>
+                    <form>
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" class="form-input" placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Work Email</label>
+                                <input type="email" class="form-input" placeholder="john@research.lab">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Company / University</label>
+                            <input type="text" class="form-input" placeholder="Acme Labs">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <select class="form-input">
+                                <option>Product Inquiry</option>
+                                <option>Technical Support</option>
+                                <option>Partnerships</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Your Message</label>
+                            <textarea class="form-input" rows="6"
+                                placeholder="How can we help your lab today?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

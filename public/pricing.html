@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | LabAx - Intelligent Laboratory Management</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            background-color: #F8FAFC;
+        }
+
+        /* Hero Section */
+        .pricing-hero {
+            padding: 8rem 0 4rem;
+            background: radial-gradient(circle at top right, #F0FDFA 0%, #FFF 40%);
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#14B8A6 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.05;
+        }
+
+        .pricing-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Pricing Cards Grid */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            padding: 0 2rem;
+        }
+
+        .pricing-card {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 24px;
+            border: 2px solid #E2E8F0;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px;
+            /* Better square proportions */
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
+            border-color: #14B8A6;
+        }
+
+        .pricing-card.featured {
+            border-color: #14B8A6;
+            border-width: 3px;
+            box-shadow: 0 20px 50px rgba(20, 184, 166, 0.2);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: 'Recommended';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Card Header */
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .plan-name {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: #F0FDFA;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .plan-cta {
+            width: 100%;
+            padding: 0.9rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #14B8A6;
+            background: transparent;
+            color: #14B8A6;
+        }
+
+        .plan-cta:hover {
+            background: #14B8A6;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(20, 184, 166, 0.3);
+        }
+
+        .featured .plan-cta {
+            background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%);
+            color: white;
+            border: none;
+        }
+
+        .featured .plan-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(20, 184, 166, 0.4);
+        }
+
+        /* 2-Column Feature Layout */
+        .plan-features {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature-section-title {
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            margin: 0 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem;
+        }
+
+        .feature-list li {
+            padding: 0.6rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .feature-list li i {
+            color: #14B8A6;
+            margin-top: 0.2rem;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .feature-list li.not-included {
+            opacity: 0.4;
+            text-decoration: line-through;
+        }
+
+        .feature-list li.not-included i {
+            color: #94a3b8;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 6rem 0;
+            background: #fff;
+        }
+
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            margin-top: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: #fff;
+        }
+
+        .comparison-table thead th {
+            background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%);
+            color: white;
+            padding: 1.5rem;
+            font-weight: 700;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .comparison-table thead th:first-child {
+            border-top-left-radius: 16px;
+        }
+
+        .comparison-table thead th:last-child {
+            border-top-right-radius: 16px;
+        }
+
+        .comparison-table tbody tr {
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #F8FAFC;
+        }
+
+        .comparison-table tbody td {
+            padding: 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tbody td:first-child {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-table .check-icon {
+            color: #14B8A6;
+            font-size: 1.2rem;
+        }
+
+        .comparison-table .cross-icon {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 0;
+            background: #F8FAFC;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 24px rgba(20, 184, 166, 0.1);
+            border-color: #14B8A6;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .faq-question i {
+            color: #14B8A6;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .comparison-table-wrapper {
+                font-size: 0.85rem;
+            }
+
+            .comparison-table thead th,
+            .comparison-table tbody td {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-microscope"></i> LabAx
+            </a>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="products.html" class="nav-link">Product Suite</a></li>
+                <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="demo.html" class="btn btn-demo">Book a Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="pricing-hero">
+        <div class="pricing-hero-content">
+            <span class="section-badge">Subscription Plans</span>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); margin: 1rem 0;">Transparent and Simple Pricing</h1>
+            <p class="section-description" style="max-width: 700px; margin: 0 auto;">Choose the plan that scales with
+                your laboratory. No hidden fees, no surprises.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="plans-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Basic</h3>
+                        <p class="plan-description">Essential laboratory management for small teams</p>
+                        <div class="plan-price">Contact Sales Team</div>
+                        <button class="plan-cta">Get Started</button>
+                    </div>
+
+                    <div class="plan-features">
+                        <!-- Left Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Key Features</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> Core modules access</li>
+                                <li><i class="fa-solid fa-check-circle"></i> 10 GB storage per user</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Email support (48h)</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Standard security</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Mobile interface</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Email notifications</li>
+                            </ul>
+
+                            <h4 class="feature-section-title">Included Modules</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> Dashboard</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Instruments</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Maintenance</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Reservations</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Not Included</h4>
+                            <ul class="feature-list">
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> API access</li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> Multi-user support
+                                </li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> AI suggestions</li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> IoT integration</li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> Advanced reporting
+                                </li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> Custom workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="pricing-card featured">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Professional</h3>
+                        <p class="plan-description">Advanced features for growing laboratories</p>
+                        <div class="plan-price">Contact Sales Team</div>
+                        <button class="plan-cta">Get Started</button>
+                    </div>
+
+                    <div class="plan-features">
+                        <!-- Left Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Key Features</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> All Basic features</li>
+                                <li><i class="fa-solid fa-check-circle"></i> 50 GB storage/user</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Priority support (24h)</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Advanced security</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Custom workflows</li>
+                                <li><i class="fa-solid fa-check-circle"></i> API access</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Advanced analytics</li>
+                                <li><i class="fa-solid fa-check-circle"></i> AI predictions</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Included Modules</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> All Basic modules</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Projects & Experiments</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Samples & QA</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Inventory</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Training & Certs</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Service Contracts</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Analytics & Reports</li>
+                            </ul>
+
+                            <h4 class="feature-section-title">Not Included</h4>
+                            <ul class="feature-list">
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> Multi-tenant</li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> IoT integration</li>
+                                <li class="not-included"><i class="fa-solid fa-times-circle"></i> Account manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <p class="plan-description">Complete solution for large-scale operations</p>
+                        <div class="plan-price">Contact Sales Team</div>
+                        <button class="plan-cta">Get Started</button>
+                    </div>
+
+                    <div class="plan-features">
+                        <!-- Left Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Key Features</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> All Pro features</li>
+                                <li><i class="fa-solid fa-check-circle"></i> 100 GB storage/user</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Dedicated support (4h)</li>
+                                <li><i class="fa-solid fa-check-circle"></i> 99.9% uptime SLA</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Multi-environment</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Custom integrations</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Account manager</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Quarterly reviews</li>
+                            </ul>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="feature-column">
+                            <h4 class="feature-section-title">Included Modules</h4>
+                            <ul class="feature-list">
+                                <li><i class="fa-solid fa-check-circle"></i> All Pro modules</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Procurement System</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Vendors & Budgeting</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Real-time Alerts</li>
+                                <li><i class="fa-solid fa-check-circle"></i> IoT Integration</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Multi-Tenant</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Asset Management</li>
+                                <li><i class="fa-solid fa-check-circle"></i> Custom Modules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Detailed Feature Comparison</h2>
+                <p class="section-description">Compare all features across subscription tiers</p>
+            </div>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Basic</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Storage per User</td>
+                            <td>10 GB</td>
+                            <td>50 GB</td>
+                            <td>100 GB</td>
+                        </tr>
+                        <tr>
+                            <td>Support Response</td>
+                            <td>48 hours</td>
+                            <td>24 hours</td>
+                            <td>4 hours</td>
+                        </tr>
+                        <tr>
+                            <td>API Access</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Custom Fields</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Tenant</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>IoT Integration</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>SLA Guarantee</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td>99.9%</td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated Account Manager</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>AI Predictions</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Analytics & Reports</td>
+                            <td>Basic</td>
+                            <td>Advanced</td>
+                            <td>Premium</td>
+                        </tr>
+                        <tr>
+                            <td>License Management</td>
+                            <td><i class="fa-solid fa-times cross-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                            <td><i class="fa-solid fa-check check-icon"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Frequently Asked Questions</h2>
+                <p class="section-description">Find answers to common questions about LabAx pricing and features</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        How does per-user pricing work?
+                    </h3>
+                    <p class="faq-answer">Our per-user pricing model charges based on the number of active users in your
+                        laboratory. Each user gets access to all features included in your selected plan. You can add or
+                        remove users at any time, and billing adjusts accordingly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Is my data secure?
+                    </h3>
+                    <p class="faq-answer">Yes, we take data security very seriously. LabAx uses industry-standard
+                        encryption, secure data centers, and regular security audits to protect your laboratory data.
+                        All data is encrypted both in transit and at rest.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Can I upgrade or downgrade my plan?
+                    </h3>
+                    <p class="faq-answer">Yes, you can upgrade or downgrade your plan at any time. Changes take effect
+                        immediately, and billing is prorated based on your current billing cycle. Our team is available
+                        to help you choose the right plan for your needs.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        What payment methods do you accept?
+                    </h3>
+                    <p class="faq-answer">We accept all major credit cards (Visa, MasterCard, American Express), debit
+                        cards, and bank transfers for annual subscriptions. For Enterprise plans, we also offer
+                        invoice-based billing with flexible payment terms.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        Do you offer free trials?
+                    </h3>
+                    <p class="faq-answer">Yes, we offer a 14-day free trial for all plans. No credit card is required to
+                        start your trial. You'll have full access to all features during the trial period, and our
+                        support team is available to help you get started.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fa-solid fa-circle-question"></i>
+                        What happens if I cancel my subscription?
+                    </h3>
+                    <p class="faq-answer">If you cancel your subscription, you'll continue to have access until the end
+                        of your current billing period. After that, your account will be downgraded to a read-only mode
+                        where you can export your data. We retain your data for 90 days before permanent deletion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+        <div class="container text-center">
+            <h2>Ready to Transform Your Laboratory?</h2>
+            <p class="section-description" style="margin: 1.5rem auto;">Explore how LabAx can drive efficiency,
+                compliance, and innovation across your organization.</p>
+            <div class="mt-lg">
+                <a href="demo.html" class="btn btn-primary btn-lg">Book a Demo</a>
+                <a href="contact.html" class="btn btn-outline btn-lg ml-md">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo"><i class="fa-solid fa-microscope"></i> LabAx</div>
+                    <p>The Intelligent Instrument Management Platform for Modern Labs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul class="footer-nav">
+                        <li><a href="products.html">Product Suite</a></li>
+                        <li><a href="products.html">Core LIMS</a></li>
+                        <li><a href="products.html">LabAx AI</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul class="footer-nav">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="demo.html">Book a Demo</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="contact.html">Help Center</a></li>
+                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="demo.html">Request Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 LabAx Inc. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
