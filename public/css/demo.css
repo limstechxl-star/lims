@@ -111,7 +111,8 @@ textarea {
     padding: 0.875rem 1rem;
     border: 2px solid #E2E8F0;
     border-radius: 12px;
-    font-size: 1rem;
+    font-size: 16px;
+    /* Prevent iOS zoom */
     color: var(--text-primary);
     background: #fff;
     transition: all 0.3s ease;
@@ -467,6 +468,29 @@ input[type="date"]:focus {
 
     .demo-header h1 {
         font-size: 2rem;
+    }
+
+    .demo-form-container {
+        padding: 1.5rem;
+        /* Reduce padding on mobile */
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-section {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .form-section-title {
+        font-size: 1.125rem;
+    }
+
+    .btn-submit {
+        padding: 1rem;
     }
 }
 
