@@ -643,7 +643,10 @@ a {
 }
 
 .orbit-center {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     width: 120px;
     height: 120px;
@@ -652,7 +655,6 @@ a {
     box-shadow: 0 0 50px rgba(20, 184, 166, 0.2);
     display: flex;
     align-items: center;
-    justify-content: center;
     justify-content: center;
     border: 1px solid rgba(20, 184, 166, 0.1);
 }
