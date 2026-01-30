@@ -209,13 +209,15 @@
     .orbit-container {
         transform: scale(0.45) !important;
         margin: -90px 0 -70px !important;
+        position: relative;
     }
 
-    .hero-visual {
-        order: 1;
-        width: 100%;
-        display: flex;
-        justify-content: center;
+    .orbit-lines circle,
+    .orbit-lines line {
+        stroke-width: 3px !important;
+        /* Make lines thicker */
+        opacity: 0.8 !important;
+        /* increased opacity */
     }
 
     /* === Feature Blocks === */
