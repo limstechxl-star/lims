@@ -232,6 +232,12 @@
         opacity: 0.8 !important;
     }
 
+    /* Stop rotation on mobile so lines connect perfectly */
+    .orbit-rotator,
+    .orbit-item i {
+        animation: none !important;
+    }
+
     /* explicit positioning overrides for mobile scaling context */
     .about-hero .orbit-item {
         width: 70px !important;
