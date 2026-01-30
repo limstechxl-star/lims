@@ -2778,3 +2778,35 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* === Pro Card Patterns === */
+.pro-card {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.pro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/hero-pattern.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Mirror Pattern for Odd Cards */
+.pro-card:nth-child(odd)::before {
+    transform: scaleX(-1);
+}
+
+/* Normal Pattern for Even Cards */
+.pro-card:nth-child(even)::before {
+    transform: none;
+}
