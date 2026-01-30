@@ -151,28 +151,28 @@
     /* === Hero Section Mobile === */
     .hero {
         min-height: auto;
-        padding: 3rem 1rem 2rem !important;
-        /* Much closer to top */
+        padding: 4rem 1rem 2.5rem !important;
         overflow-x: hidden;
         width: 100%;
     }
 
     .hero-content {
-        gap: 1.5rem;
-        /* Tighter gap */
+        gap: 2rem;
         padding: 0;
         width: 100%;
         max-width: 100%;
     }
 
     .hero h1 {
-        font-size: 1.75rem !important;
-        margin-bottom: 0.75rem;
+        font-size: 1.85rem !important;
+        margin-bottom: 1rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 0.95rem !important;
+        font-size: 1rem !important;
         margin-bottom: 1.5rem;
+        line-height: 1.6;
     }
 
     .hero-cta {
@@ -242,19 +242,7 @@
         margin-bottom: 1rem;
     }
 
-    /* Trusted By Strip Mobile */
-    .trusted-by {
-        padding: 2rem 0;
-    }
 
-    .logo-strip {
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .logo-strip i {
-        font-size: 1.5rem;
-    }
 
     /* === Product/Feature Grids === */
     .product-grid,
@@ -376,17 +364,21 @@
 
     /* === About Page Mobile Optimization === */
     .about-hero {
-        padding: 6rem 1rem 3rem !important;
+        padding: 4rem 1rem 3rem !important;
         min-height: auto;
     }
 
     .about-hero h1 {
-        font-size: 2.25rem !important;
-        line-height: 1.1;
+        font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem;
     }
 
     .about-hero p {
         max-width: 100% !important;
+        font-size: 1rem !important;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
     }
 
     .counter-item h3 {
