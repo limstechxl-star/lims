@@ -431,6 +431,18 @@ a {
     z-index: 1;
 }
 
+/* About Hero Desktop Visual Alignment */
+@media (min-width: 769px) {
+    .about-hero .grid-2>div:last-child {
+        display: flex;
+        justify-content: flex-end;
+        /* Align visual to the right */
+        align-items: center;
+        padding-right: 2rem;
+        /* Optional: add some padding from edge */
+    }
+}
+
 @media (max-width: 1024px) {
     .grid-2 {
         grid-template-columns: 1fr;
