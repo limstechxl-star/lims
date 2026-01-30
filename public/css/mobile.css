@@ -207,16 +207,20 @@
 
     /* Orbit - Optimized for mobile */
     .orbit-container {
-        transform: scale(0.55) !important;
+        /* Combined Transform: Center horizontally (-50%) THEN Scale (0.55) */
+        transform: translateX(-50%) scale(0.55) !important;
         transform-origin: center center !important;
         position: relative;
         width: 500px !important;
-        /* absolute centering technique */
+
+        /* Absolute positioning base */
         left: 50% !important;
-        margin-left: -250px !important;
-        margin-top: -40px !important;
-        /* Fixed: Relaxed from -100px to prevent top chopping */
-        margin-bottom: -40px !important;
+
+        /* Reset margins to prevent clipping - safe spacing */
+        margin-left: 0 !important;
+        margin-top: -20px !important;
+        /* Slight pull up, but safe */
+        margin-bottom: -20px !important;
     }
 
     .hero-visual {
@@ -463,16 +467,19 @@
 
     /* Center the orbit explicitly - Match Home Logic */
     .about-hero .orbit-container {
-        transform: scale(0.55) !important;
+        /* Combined Transform: Center horizontally (-50%) THEN Scale (0.55) */
+        transform: translateX(-50%) scale(0.55) !important;
         transform-origin: center center !important;
         position: relative;
         width: 500px !important;
-        /* absolute centering technique */
+
+        /* Absolute positioning base */
         left: 50% !important;
-        margin-left: -250px !important;
-        margin-top: -40px !important;
-        /* Fixed: Relaxed from -90px to prevent top chopping */
-        margin-bottom: -40px !important;
+
+        /* Safe spacing to avoid text clipping */
+        margin-left: 0 !important;
+        margin-top: -20px !important;
+        margin-bottom: 0 !important;
     }
 
     .about-hero .reveal {
