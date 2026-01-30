@@ -626,9 +626,8 @@ a {
     position: relative;
     width: 500px;
     height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
+    /* Ensure horizontal centering on desktop */
 }
 
 .orbit-lines {

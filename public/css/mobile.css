@@ -214,7 +214,8 @@
         /* absolute centering technique */
         left: 50% !important;
         margin-left: -250px !important;
-        margin-top: -60px !important;
+        margin-top: -100px !important;
+        /* Pulled up higher to avoid being cut off */
         margin-bottom: -40px !important;
     }
 
@@ -227,25 +228,29 @@
         overflow: hidden !important;
     }
 
-    .orbit-lines circle,
-    .orbit-lines line {
-        stroke-width: 3px !important;
-        opacity: 0.8 !important;
-    }
-
-    /* Stop rotation & Force Alignment */
+    /* Re-enable rotation for mobile as requested, assuming strict centering holds */
     .orbit-rotator {
-        animation: none !important;
-        transform: none !important;
-        width: 100% !important;
-        height: 100% !important;
-        top: 0 !important;
-        left: 0 !important;
-        position: absolute !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: rotateSlow 120s linear infinite !important;
+        /* Force re-enable */
     }
 
-    /* Fix Icons & Center Logo Visibility */
-    .orbit-item i,
+    .orbit-lines {
+        animation: rotateSlow 120s linear infinite !important;
+        /* Ensure lines rotate nicely too */
+    }
+
+    .orbit-item i {
+        animation: rotateCounter 120s linear infinite !important;
+        /* Counter rotate icons */
+        transform: none !important;
+        /* Let animation handle it */
+    }
+
     .orbit-center i {
         animation: none !important;
         transform: none !important;
