@@ -71,46 +71,54 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-text fade-in">
-                <h1 style="font-size: clamp(1.75rem, 5vw, 3.5rem); line-height: 1.2; margin-bottom: 1.5rem;">
-                    AI-Native Lab Management
-                </h1>
-                <p class="hero-subtitle"
-                    style="font-size: clamp(0.95rem, 2.5vw, 1.25rem); line-height: 1.6; margin-bottom: 2rem;">
-                    Optimize inventory, predict maintenance, and automate compliance with the world's first AI-native
-                    LIMS.
-                </p>
-                <div class="hero-cta">
-                    <a href="demo.html" class="btn btn-primary">Book a Demo</a>
-                    <a href="products.html" class="btn btn-outline">Explore Platform</a>
-                </div>
-            </div>
+    <header class="hero" style="padding: 2rem 0.75rem !important; min-height: auto !important;">
+        <div class="container" style="padding: 0 0.75rem !important; max-width: 100% !important;">
+            <div class="hero-content"
+                style="display: flex; flex-direction: column; gap: 2rem; text-align: left !important; max-width: 100% !important;">
 
-            <div class="hero-visual fade-in">
-                <div class="orbit-container">
-                    <!-- Dotted Connecting Lines -->
-                    <svg class="orbit-lines" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="250" cy="250" r="180" stroke="#14B8A6" stroke-width="2" stroke-dasharray="8 8"
-                            fill="none" opacity="0.3" />
-                        <line x1="250" y1="250" x2="250" y2="70" stroke="#14B8A6" stroke-width="2"
-                            stroke-dasharray="4 4" opacity="0.3" />
-                        <line x1="250" y1="250" x2="405" y2="160" stroke="#14B8A6" stroke-width="2"
-                            stroke-dasharray="4 4" opacity="0.3" />
-                        <line x1="250" y1="250" x2="405" y2="340" stroke="#14B8A6" stroke-width="2"
-                            stroke-dasharray="4 4" opacity="0.3" />
-                    </svg>
-                    <!-- Center Logo -->
-                    <div class="orbit-center">
-                        <i class="fa-solid fa-microscope pop-in"></i>
+                <!-- Orbit Visual First on Mobile -->
+                <div class="hero-visual fade-in" style="order: 1; width: 100%; display: flex; justify-content: center;">
+                    <div class="orbit-container" style="transform: scale(0.3); margin: -120px 0 -90px;">
+                        <svg class="orbit-lines" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="250" cy="250" r="180" stroke="#14B8A6" stroke-width="2" stroke-dasharray="8 8"
+                                fill="none" opacity="0.3" />
+                            <line x1="250" y1="250" x2="250" y2="70" stroke="#14B8A6" stroke-width="2"
+                                stroke-dasharray="4 4" opacity="0.3" />
+                            <line x1="250" y1="250" x2="405" y2="160" stroke="#14B8A6" stroke-width="2"
+                                stroke-dasharray="4 4" opacity="0.3" />
+                            <line x1="250" y1="250" x2="405" y2="340" stroke="#14B8A6" stroke-width="2"
+                                stroke-dasharray="4 4" opacity="0.3" />
+                        </svg>
+                        <div class="orbit-center">
+                            <i class="fa-solid fa-microscope pop-in"></i>
+                        </div>
+                        <div class="orbit-rotator">
+                            <div class="orbit-item item-1"><i class="fa-solid fa-flask"></i></div>
+                            <div class="orbit-item item-2"><i class="fa-solid fa-dna"></i></div>
+                            <div class="orbit-item item-3"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="orbit-item item-4"><i class="fa-solid fa-server"></i></div>
+                        </div>
                     </div>
-                    <!-- Icon Ring -->
-                    <div class="orbit-rotator">
-                        <div class="orbit-item item-1"><i class="fa-solid fa-flask"></i></div>
-                        <div class="orbit-item item-2"><i class="fa-solid fa-dna"></i></div>
-                        <div class="orbit-item item-3"><i class="fa-solid fa-chart-line"></i></div>
-                        <div class="orbit-item item-4"><i class="fa-solid fa-server"></i></div>
+                </div>
+
+                <!-- Text Content Second -->
+                <div class="hero-text fade-in" style="order: 2; width: 100%; max-width: 100%; padding: 0;">
+                    <h1
+                        style="font-size: 1.5rem; line-height: 1.3; margin-bottom: 1rem; text-align: left; width: 100%; max-width: 100%; word-wrap: break-word; overflow-wrap: break-word;">
+                        AI-Native Lab Management
+                    </h1>
+                    <p class="hero-subtitle"
+                        style="font-size: 0.875rem; line-height: 1.5; margin-bottom: 1.5rem; text-align: left; width: 100%; max-width: 100%; color: #64748b;">
+                        Optimize inventory, predict maintenance, and automate compliance with the world's first
+                        AI-native LIMS.
+                    </p>
+                    <div class="hero-cta" style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%;">
+                        <a href="demo.html" class="btn btn-primary"
+                            style="width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center;">Book
+                            a Demo</a>
+                        <a href="products.html" class="btn btn-outline"
+                            style="width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: center;">Explore
+                            Platform</a>
                     </div>
                 </div>
             </div>
