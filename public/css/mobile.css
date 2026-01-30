@@ -391,8 +391,10 @@
 
     /* === About Page - CRITICAL OVERRIDES === */
     /* === About Page - CRITICAL OVERRIDES MATCHING HOME === */
+    /* === About Page - CRITICAL OVERRIDES MATCHING HOME === */
     .about-hero {
-        padding: 2rem 0 !important;
+        padding: 8rem 0 2rem !important;
+        /* Fixed: Increased top padding to prevent header overlap */
         /* Match Home Hero Scale */
         min-height: auto;
         width: 100%;
