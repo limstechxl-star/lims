@@ -214,8 +214,8 @@
         /* absolute centering technique */
         left: 50% !important;
         margin-left: -250px !important;
-        margin-top: -100px !important;
-        /* Pulled up higher to avoid being cut off */
+        margin-top: -40px !important;
+        /* Fixed: Relaxed from -100px to prevent top chopping */
         margin-bottom: -40px !important;
     }
 
@@ -225,7 +225,8 @@
         height: 300px !important;
         /* Reserve space */
         position: relative;
-        overflow: hidden !important;
+        overflow: visible !important;
+        /* Fixed: Allow icons to bleed out without clipping */
     }
 
     /* Re-enable rotation for mobile as requested, assuming strict centering holds */
@@ -469,7 +470,8 @@
         /* absolute centering technique */
         left: 50% !important;
         margin-left: -250px !important;
-        margin-top: -90px !important;
+        margin-top: -40px !important;
+        /* Fixed: Relaxed from -90px to prevent top chopping */
         margin-bottom: -40px !important;
     }
 
