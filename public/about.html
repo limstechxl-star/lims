@@ -516,33 +516,59 @@
                     after implementing LabAx.</p>
             </div>
 
-            <div class="chart-row">
-                <div class="stat-circle-wrap reveal">
-                    <h4 style="margin-bottom: 2rem;">Cost Reduction</h4>
-                    <div class="stats-circle-graph animate"
-                        style="margin: 0 auto; background: conic-gradient(var(--primary) 50%, #1a1a1a 0%);">
-                        <span class="stat-value">50%</span>
+            <div class="impact-grid reveal">
+                <!-- 1. Cost Reduction -->
+                <div class="impact-card">
+                    <h3 class="impact-title">Cost Reduction</h3>
+                    <div class="progress-container" data-progress="50">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="rgba(20, 184, 166, 0.1)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60"
+                                style="stroke-dasharray: 326.72 326.72; stroke-dashoffset: 326.72;" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="50" data-suffix="%">0%</span>
+                        </div>
                     </div>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Inventory waste
-                        reduction within 6 months.</p>
+                    <p class="impact-description">Inventory waste reduction within 6 months.</p>
                 </div>
-                <div class="stat-circle-wrap reveal" style="transition-delay: 0.1s;">
-                    <h4 style="margin-bottom: 2rem;">Documentation Speed</h4>
-                    <div class="stats-circle-graph animate"
-                        style="margin: 0 auto; background: conic-gradient(var(--accent) 75%, #1a1a1a 0%);">
-                        <span class="stat-value">3x</span>
+
+                <!-- 2. Documentation Speed -->
+                <div class="impact-card" style="transition-delay: 0.1s;">
+                    <h3 class="impact-title">Documentation Speed</h3>
+                    <div class="progress-container" data-progress="75">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="rgba(20, 184, 166, 0.1)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60"
+                                style="stroke-dasharray: 326.72 326.72; stroke-dashoffset: 326.72;" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="3" data-suffix="x">0x</span>
+                        </div>
                     </div>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Faster compliance
-                        reporting and audit readiness.</p>
+                    <p class="impact-description">Faster compliance reporting and audit readiness.</p>
                 </div>
-                <div class="stat-circle-wrap reveal" style="transition-delay: 0.2s;">
-                    <h4 style="margin-bottom: 2rem;">Instrument Uptime</h4>
-                    <div class="stats-circle-graph animate"
-                        style="margin: 0 auto; background: conic-gradient(#fff 99%, #1a1a1a 0%);">
-                        <span class="stat-value">99%</span>
+
+                <!-- 3. Instrument Uptime -->
+                <div class="impact-card" style="transition-delay: 0.2s;">
+                    <h3 class="impact-title">Instrument Uptime</h3>
+                    <div class="progress-container" data-progress="99">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="rgba(20, 184, 166, 0.1)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="var(--primary)" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60"
+                                style="stroke-dasharray: 326.72 326.72; stroke-dashoffset: 326.72;" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="99" data-suffix="%">0%</span>
+                        </div>
                     </div>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-tertiary);">Improvement in
-                        equipment availability via AI-Predict.</p>
+                    <p class="impact-description">Improvement in equipment availability via AI-Predict.</p>
                 </div>
             </div>
 
