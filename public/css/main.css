@@ -2836,3 +2836,7 @@ a {
     stroke: rgba(20, 184, 166, 0.15);
     /* Slightly darker track for visibility on light bg */
 }
+
+.hero-impact-card .progress-text {
+    display: none !important;
+}
