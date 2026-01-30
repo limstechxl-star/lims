@@ -2795,10 +2795,11 @@ a {
     height: 100%;
     background-image: url('../assets/images/hero-pattern.svg');
     background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.08;
+    background-position: center;
+    opacity: 0.12;
     z-index: 0;
     pointer-events: none;
+    border-radius: inherit;
 }
 
 /* Ensure content sits above pattern */
