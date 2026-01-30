@@ -207,27 +207,37 @@
 
     /* Orbit - Optimized for mobile */
     .orbit-container {
-        /* Simple Scale only - Flex parent handles centering */
+        /* Scale down 500px to ~275px */
         transform: scale(0.55) !important;
         transform-origin: center center !important;
-        position: relative;
+
+        /* Force rigidly 500px wide, DO NOT SHRINK or coordinates break */
         width: 500px !important;
+        flex-shrink: 0 !important;
+        position: relative;
 
         /* Reset positioning hacks */
         left: auto !important;
-        margin: -40px auto -40px !important;
-        /* Center with auto margins, pull up slightly */
+        right: auto !important;
+
+        /* 
+           Math: 500px * 0.55 = 275px visual height.
+           Gap is (500 - 275) / 2 = 112.5px on top and bottom.
+           margin: -100px closes this gap safely without clipping content.
+        */
+        margin: -100px 0 !important;
     }
 
     .hero-visual {
         display: flex !important;
-        /* Restoration of Flexbox Centering */
+        /* Flexbox Centering */
         justify-content: center !important;
         align-items: center !important;
         height: 300px !important;
+        width: 100% !important;
         position: relative;
         overflow: visible !important;
-        width: 100% !important;
+        /* Prevent ANY clipping */
     }
 
     /* Re-enable rotation for mobile as requested, assuming strict centering holds */
