@@ -142,49 +142,35 @@
         margin-top: 1rem;
     }
 
-    /* === Hero Section - CRITICAL FIXES === */
+    /* === Hero Section - MOBILE ONLY === */
     .hero {
         min-height: auto !important;
-        padding: 3rem 0.5rem 2rem !important;
-        overflow-x: hidden !important;
-        width: 100% !important;
+        padding: 3rem 1rem 2rem !important;
     }
 
     .hero-content {
-        gap: 2rem !important;
-        padding: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        text-align: left !important;
         grid-template-columns: 1fr !important;
-        margin: 0 !important;
+        gap: 2rem !important;
+        text-align: left !important;
     }
 
     .hero-text {
         order: 2;
-        width: 100% !important;
-        padding: 0 !important;
-        max-width: 100% !important;
+        width: 100%;
     }
 
     .hero h1 {
-        font-size: 1.6rem !important;
-        margin-bottom: 1rem !important;
+        font-size: 1.5rem !important;
         line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
         text-align: left !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
     }
 
     .hero-subtitle {
-        font-size: 0.9rem !important;
-        margin-bottom: 1.5rem !important;
+        font-size: 0.875rem !important;
         line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
         text-align: left !important;
-        width: 100% !important;
-        max-width: 100% !important;
     }
 
     .hero-cta {
@@ -196,21 +182,16 @@
     .hero-cta .btn {
         width: 100%;
         min-height: 48px;
-        padding: 0.75rem 1rem;
-        font-weight: 600;
-        font-size: 0.95rem;
     }
 
-    /* Orbit - Much smaller on mobile */
+    /* Orbit - Smaller on mobile */
     .orbit-container {
-        transform: scale(0.35) !important;
-        margin: -110px 0 -80px !important;
-        pointer-events: none;
+        transform: scale(0.5) !important;
+        margin: -80px 0 -60px !important;
     }
 
     .hero-visual {
         order: 1;
-        margin-bottom: 0;
         width: 100%;
         display: flex;
         justify-content: center;
