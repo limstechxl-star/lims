@@ -471,6 +471,13 @@
         margin-right: auto !important;
     }
 
+    .about-hero .grid-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
     /* Center the orbit explicitly - Match Home Logic */
     /* Center the orbit explicitly - Match Home Logic */
     /* Center the orbit explicitly - Match Home Logic */
