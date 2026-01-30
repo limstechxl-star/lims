@@ -476,6 +476,11 @@
         flex-direction: column !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 100vw !important;
+        /* Prevent overflow shifting */
+        padding: 0 !important;
+        /* Remove internal padding that might shift center */
+        margin: 0 !important;
     }
 
     /* Center the orbit explicitly - Match Home Logic */
