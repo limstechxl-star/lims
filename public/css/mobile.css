@@ -207,30 +207,27 @@
 
     /* Orbit - Optimized for mobile */
     .orbit-container {
-        /* Combined Transform: Center horizontally (-50%) THEN Scale (0.55) */
-        transform: translateX(-50%) scale(0.55) !important;
+        /* Simple Scale only - Flex parent handles centering */
+        transform: scale(0.55) !important;
         transform-origin: center center !important;
         position: relative;
         width: 500px !important;
 
-        /* Absolute positioning base */
-        left: 50% !important;
-
-        /* Reset margins to prevent clipping - safe spacing */
-        margin-left: 0 !important;
-        margin-top: -20px !important;
-        /* Slight pull up, but safe */
-        margin-bottom: -20px !important;
+        /* Reset positioning hacks */
+        left: auto !important;
+        margin: -40px auto -40px !important;
+        /* Center with auto margins, pull up slightly */
     }
 
     .hero-visual {
-        display: block !important;
-        /* Changed from flex to allow absolute centering of child */
+        display: flex !important;
+        /* Restoration of Flexbox Centering */
+        justify-content: center !important;
+        align-items: center !important;
         height: 300px !important;
-        /* Reserve space */
         position: relative;
         overflow: visible !important;
-        /* Fixed: Allow icons to bleed out without clipping */
+        width: 100% !important;
     }
 
     /* Re-enable rotation for mobile as requested, assuming strict centering holds */
@@ -466,20 +463,18 @@
     }
 
     /* Center the orbit explicitly - Match Home Logic */
+    /* Center the orbit explicitly - Match Home Logic */
     .about-hero .orbit-container {
-        /* Combined Transform: Center horizontally (-50%) THEN Scale (0.55) */
-        transform: translateX(-50%) scale(0.55) !important;
+        /* Simple Scale only - Parent .reveal is already flex centered */
+        transform: scale(0.55) !important;
         transform-origin: center center !important;
         position: relative;
         width: 500px !important;
 
-        /* Absolute positioning base */
-        left: 50% !important;
-
-        /* Safe spacing to avoid text clipping */
-        margin-left: 0 !important;
-        margin-top: -20px !important;
-        margin-bottom: 0 !important;
+        /* Reset positioning hacks */
+        left: auto !important;
+        margin: -40px auto -20px !important;
+        /* Auto margins for center, slight pull up */
     }
 
     .about-hero .reveal {
