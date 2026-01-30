@@ -198,18 +198,56 @@
     <!-- Detailed Stats and Value Prop -->
     <section class="section bg-darker">
         <div class="container">
-            <div class="metrics-grid mb-4">
-                <div class="metric-card fade-in">
-                    <span class="metric-value">50%</span>
-                    <span class="metric-label">Cost Reduction</span>
+            <div class="metrics-grid mb-4 impact-grid">
+                <!-- Card 1: Cost Reduction -->
+                <div class="impact-card fade-in">
+                    <h3 class="impact-title">Cost Reduction</h3>
+                    <div class="progress-container" data-progress="50">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="#e2e8f0" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="#14B8A6" stroke-width="8" fill="transparent"
+                                r="52" cx="60" cy="60" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="50" data-suffix="%">0%</span>
+                        </div>
+                    </div>
+                    <p class="impact-description">Inventory waste reduction within 6 months.</p>
                 </div>
-                <div class="metric-card fade-in">
-                    <span class="metric-value">99.9%</span>
-                    <span class="metric-label">Uptime SLA</span>
+
+                <!-- Card 2: Documentation Speed -->
+                <div class="impact-card fade-in">
+                    <h3 class="impact-title">Documentation Speed</h3>
+                    <div class="progress-container" data-progress="75">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="#e2e8f0" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="#14B8A6" stroke-width="8" fill="transparent"
+                                r="52" cx="60" cy="60" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="3" data-suffix="x">0x</span>
+                        </div>
+                    </div>
+                    <p class="impact-description">Faster compliance reporting and audit readiness.</p>
                 </div>
-                <div class="metric-card fade-in">
-                    <span class="metric-value">300%</span>
-                    <span class="metric-label">ROI (24mo)</span>
+
+                <!-- Card 3: Instrument Uptime -->
+                <div class="impact-card fade-in">
+                    <h3 class="impact-title">Instrument Uptime</h3>
+                    <div class="progress-container" data-progress="95">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle class="progress-ring__circle--bg" stroke="#e2e8f0" stroke-width="8"
+                                fill="transparent" r="52" cx="60" cy="60" />
+                            <circle class="progress-ring__circle" stroke="#14B8A6" stroke-width="8" fill="transparent"
+                                r="52" cx="60" cy="60" />
+                        </svg>
+                        <div class="progress-text">
+                            <span class="impact-value" data-target="99" data-suffix="%">0%</span>
+                        </div>
+                    </div>
+                    <p class="impact-description">Improvement in equipment availability via AI-Predict.</p>
                 </div>
             </div>
             <div class="text-center mt-4">

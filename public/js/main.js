@@ -333,3 +333,45 @@ const graphObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.sticky-card').forEach(card => {
     graphObserver.observe(card);
 });
+
+// Circular Progress Animation
+const impactObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const card = entry.target;
+            const container = card.querySelector('.progress-container');
+            const progress = container.dataset.progress;
+            const circle = card.querySelector('.progress-ring__circle');
+            const valueSpan = card.querySelector('.impact-value');
+            const targetValue = valueSpan.dataset.target;
+            const suffix = valueSpan.dataset.suffix || '';
+
+            // Animate Circle
+            const radius = circle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (progress / 100) * circumference;
+
+            circle.style.strokeDashoffset = offset;
+
+            // Animate Number
+            let current = 0;
+            const increment = targetValue / 50; // Adjust speed
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= targetValue) {
+                    current = targetValue;
+                    clearInterval(timer);
+                }
+                // Handle integers vs decimals
+                const displayValue = targetValue % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+                valueSpan.textContent = displayValue + suffix;
+            }, 30);
+
+            observer.unobserve(card);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.impact-card').forEach(card => {
+    impactObserver.observe(card);
+});
