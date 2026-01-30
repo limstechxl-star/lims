@@ -236,6 +236,7 @@
     .orbit-rotator,
     .orbit-item i {
         animation: none !important;
+        transform: rotate(0deg) !important;
     }
 
     /* explicit positioning overrides for mobile scaling context */
