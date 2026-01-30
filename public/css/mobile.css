@@ -142,31 +142,49 @@
         margin-top: 1rem;
     }
 
-    /* === Hero Section === */
+    /* === Hero Section - CRITICAL FIXES === */
     .hero {
-        min-height: auto;
-        padding: 4rem 1rem 2.5rem !important;
-        overflow-x: hidden;
-        width: 100%;
+        min-height: auto !important;
+        padding: 3rem 0.5rem 2rem !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
     }
 
     .hero-content {
-        gap: 2rem;
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
+        gap: 2rem !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        grid-template-columns: 1fr !important;
+        margin: 0 !important;
+    }
+
+    .hero-text {
+        order: 2;
+        width: 100% !important;
+        padding: 0 !important;
+        max-width: 100% !important;
     }
 
     .hero h1 {
-        font-size: 1.85rem !important;
+        font-size: 1.6rem !important;
         margin-bottom: 1rem !important;
-        line-height: 1.2 !important;
+        line-height: 1.3 !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
 
     .hero-subtitle {
-        font-size: 1rem !important;
+        font-size: 0.9rem !important;
         margin-bottom: 1.5rem !important;
-        line-height: 1.6 !important;
+        line-height: 1.5 !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .hero-cta {
@@ -185,8 +203,8 @@
 
     /* Orbit - Much smaller on mobile */
     .orbit-container {
-        transform: scale(0.45) !important;
-        margin: -90px 0 -60px !important;
+        transform: scale(0.35) !important;
+        margin: -110px 0 -80px !important;
         pointer-events: none;
     }
 
@@ -196,12 +214,6 @@
         width: 100%;
         display: flex;
         justify-content: center;
-    }
-
-    .hero-text {
-        order: 2;
-        width: 100%;
-        padding: 0;
     }
 
     /* === Feature Blocks === */
