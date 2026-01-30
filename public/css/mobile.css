@@ -560,24 +560,22 @@
         gap: 1.25rem;
     }
 
-    /* === Architecture Grid Mobile === */
-    .architecture-grid {
+    /* === Pro Grid Mobile === */
+    .pro-grid {
         grid-template-columns: 1fr !important;
-        gap: 1rem !important;
+        gap: 1.5rem !important;
+        margin-top: 2.5rem !important;
     }
 
-    .arch-card {
+    .pro-card {
         padding: 1.5rem !important;
     }
 
-    .arch-icon {
-        width: 50px !important;
-        height: 50px !important;
+    .pro-header {
+        margin-bottom: 1rem;
+    }
+
+    .pro-card h3 {
         font-size: 1.5rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .feature-box {
-        padding: 1.5rem !important;
     }
 }
