@@ -241,17 +241,32 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
     background: radial-gradient(circle at top right, #F0FDFA 0%, #FFFFFF 60%);
     padding: 6rem 1.5rem 4rem;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1rem 3rem;
+        /* Tighter padding for mobile */
+        min-height: auto;
+        /* Don't force full height on short screens */
+    }
+}
+
 .grid-2 {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 6rem;
-    /* Increased gap to fill width */
     align-items: center;
+}
+
+@media (max-width: 900px) {
+
+    .grid-2,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
 /* Why Choose Section Typography Boost */
@@ -438,6 +453,17 @@ a {
         margin-top: 1rem;
         display: flex;
         justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        gap: 2rem;
+        /* Reduce gap between text and visual */
+    }
+
+    .grid-2 {
+        gap: 2rem;
     }
 }
 
@@ -800,6 +826,13 @@ a {
     padding: var(--spacing-2xl) 2rem;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1rem;
+        /* Reduce global section padding on mobile */
+    }
 }
 
 .section-header {
@@ -1447,6 +1480,18 @@ a {
     }
 }
 
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-form-card,
+    .info-panel {
+        padding: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1672,6 +1717,8 @@ a {
     }
 }
 
+/* Closing brace for @media (max-width: 1024px) */
+
 @media (max-width: 768px) {
 
     /* Mobile Override for Sticky - Stack them purely */
@@ -1690,7 +1737,8 @@ a {
         width: 100%;
         height: auto;
         min-height: auto;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        /* Reduced from 2rem */
         box-shadow: var(--shadow-md);
         display: flex;
         flex-direction: column;
@@ -1706,49 +1754,133 @@ a {
     }
 }
 
-/* === Sticky Scroll Section === */
-.sticky-scroll-section {
+/* === Feature Block Section (Replaces Sticky Scroll) === */
+.feature-section {
     padding: var(--spacing-2xl) 0;
-    background: var(--bg-secondary);
-}
-
-.sticky-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.sticky-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.sticky-card {
-    position: sticky;
-    top: 120px;
-    /* Offset for header */
-    top: 120px;
-    /* Offset for header */
-    height: 700px;
-    /* Increased height for "full" look */
-    background: white;
-    border-radius: var(--radius-2xl);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
-    /* Shadow showing upward */
-    margin-bottom: 2rem;
+    position: relative;
     overflow: hidden;
+}
+
+.feature-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.feature-block:last-child {
+    margin-bottom: 0;
+}
+
+.feature-block.reversed .feature-content {
+    order: 2;
+}
+
+.feature-block.reversed .feature-visual {
+    order: 1;
+}
+
+.feature-content {
     display: flex;
-    transition: transform 0.3s ease-out;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Alternate card colors for visual stack distinction */
-.sticky-card:nth-child(1) {
-    top: 100px;
+.feature-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: inline-block;
 }
 
-.sticky-card:nth-child(2) {
-    top: 120px;
+.feature-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+}
+
+.feature-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.feature-visual {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    background: white;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.feature-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.feature-block:hover .feature-visual img {
+    transform: scale(1.02);
+}
+
+/* Feature specific embellishments */
+.feature-list-small {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.feature-list-small li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+.feature-list-small i {
+    color: var(--accent);
+}
+
+/* Trusted By Strip */
+.trusted-by {
+    padding: 3rem 0;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.trusted-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.logo-strip {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.logo-strip i {
+    font-size: 2rem;
 }
 
 .sticky-card:nth-child(3) {
