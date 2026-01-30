@@ -2796,7 +2796,7 @@ a {
     background-image: url('../assets/images/hero-pattern.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    opacity: 0.12;
+    opacity: 0.08;
     z-index: -1;
     pointer-events: none;
 }
