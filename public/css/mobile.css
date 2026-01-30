@@ -496,12 +496,18 @@
         flex-shrink: 0 !important;
         position: relative;
 
-        /* Reset positioning */
-        left: auto !important;
+        /* 
+           Absolute Centering Technique:
+           Since 500px > mobile viewport, flex centering can be unreliable.
+           We force the left edge to center (50%) and pull back by half width (-250px).
+           This guarantees visual centering.
+        */
+        left: 50% !important;
         right: auto !important;
+        margin-left: -250px !important;
 
-        /* Consistent safe spacing - No Clipping at top, tighter at bottom */
-        margin: 0 auto -40px !important;
+        margin-top: 0 !important;
+        margin-bottom: -40px !important;
     }
 
     .about-hero .reveal {
