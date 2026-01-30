@@ -2433,57 +2433,82 @@ a {
 .architecture-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 2rem;
+    /* Increased gap for better spacing */
+    margin-top: 4rem;
+    perspective: 1000px;
 }
 
 .arch-card {
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 2.5rem;
     border-radius: var(--radius-xl);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.arch-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .arch-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
     background: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* Soft premium shadow */
-    border-color: var(--primary);
+    box-shadow: 0 20px 40px -5px rgba(20, 184, 166, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+    /* Premium colored shadow */
+    border-color: rgba(20, 184, 166, 0.3);
+    z-index: 10;
+}
+
+.arch-card:hover::before {
+    opacity: 1;
 }
 
 .arch-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .arch-card:hover .arch-icon {
     transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(20, 184, 166, 0.2);
 }
 
 .arch-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.35rem;
+    font-weight: 700;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
-    line-height: 1.3;
+    letter-spacing: -0.01em;
 }
 
 .arch-card p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
