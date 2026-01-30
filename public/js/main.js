@@ -335,37 +335,43 @@ document.querySelectorAll('.sticky-card').forEach(card => {
 });
 
 // Circular Progress Animation
+// Circular Progress Animation
 const impactObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const card = entry.target;
             const container = card.querySelector('.progress-container');
-            const progress = container.dataset.progress;
             const circle = card.querySelector('.progress-ring__circle');
             const valueSpan = card.querySelector('.impact-value');
-            const targetValue = valueSpan.dataset.target;
-            const suffix = valueSpan.dataset.suffix || '';
 
-            // Animate Circle
-            const radius = circle.r.baseVal.value;
-            const circumference = 2 * Math.PI * radius;
-            const offset = circumference - (progress / 100) * circumference;
+            // Animate Circle (Only if elements exist)
+            if (container && circle) {
+                const progress = container.dataset.progress;
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                const offset = circumference - (progress / 100) * circumference;
+                circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                circle.style.strokeDashoffset = offset;
+            }
 
-            circle.style.strokeDashoffset = offset;
+            // Animate Number (Only if element exists)
+            if (valueSpan) {
+                const targetValue = parseFloat(valueSpan.dataset.target);
+                const suffix = valueSpan.dataset.suffix || '';
+                let current = 0;
+                const increment = targetValue / 50; // Adjust speed
 
-            // Animate Number
-            let current = 0;
-            const increment = targetValue / 50; // Adjust speed
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= targetValue) {
-                    current = targetValue;
-                    clearInterval(timer);
-                }
-                // Handle integers vs decimals
-                const displayValue = targetValue % 1 === 0 ? Math.floor(current) : current.toFixed(1);
-                valueSpan.textContent = displayValue + suffix;
-            }, 30);
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= targetValue) {
+                        current = targetValue;
+                        clearInterval(timer);
+                    }
+                    // Handle integers vs decimals
+                    const displayValue = Number.isInteger(targetValue) ? Math.floor(current) : current.toFixed(1);
+                    valueSpan.textContent = displayValue + suffix;
+                }, 30);
+            }
 
             observer.unobserve(card);
         }
