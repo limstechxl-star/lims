@@ -474,25 +474,33 @@
 
     /* Center the orbit explicitly - Match Home Logic */
     /* Center the orbit explicitly - Match Home Logic */
+    /* Center the orbit explicitly - Match Home Logic */
     .about-hero .orbit-container {
-        /* Simple Scale only - Parent .reveal is already flex centered */
+        /* Scale down 500px to ~275px */
         transform: scale(0.55) !important;
         transform-origin: center center !important;
-        position: relative;
-        width: 500px !important;
 
-        /* Reset positioning hacks */
+        /* Force rigidly 500px wide, DO NOT SHRINK or coordinates break */
+        width: 500px !important;
+        flex-shrink: 0 !important;
+        position: relative;
+
+        /* Reset positioning */
         left: auto !important;
-        margin: -40px auto -20px !important;
-        /* Auto margins for center, slight pull up */
+        right: auto !important;
+
+        /* Consistent spacing logic */
+        margin: -100px 0 !important;
     }
 
     .about-hero .reveal {
-        width: 100%;
-        display: flex;
+        display: flex !important;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        overflow: visible !important;
+        /* Allow orbit to bleed */
     }
 
     /* Fix counters centering */
