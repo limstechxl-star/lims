@@ -2831,3 +2831,9 @@ a {
     transform: none !important;
     box-shadow: none !important;
 }
+
+/* Force hide rings if HTML is cached */
+.hero-impact-card .progress-container,
+.hero-impact-card .progress-ring {
+    display: none !important;
+}
