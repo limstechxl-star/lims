@@ -2797,8 +2797,14 @@ a {
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.08;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
+}
+
+/* Ensure content sits above pattern */
+.pro-card>* {
+    position: relative;
+    z-index: 1;
 }
 
 /* Mirror Pattern for Odd Cards */
