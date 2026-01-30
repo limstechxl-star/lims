@@ -221,12 +221,10 @@
         right: auto !important;
 
         /* 
-           Math: 500px * 0.55 = 275px visual height.
-           Gap is (500 - 275) / 2 = 112.5px on top and bottom.
-           margin: -10px leaves ~100px buffer. Icons take ~70px. 
-           Result: ~30px safe visual whitespace. NO CLIPPING.
+           Safety Fix: Top Margin 0 ensures full buffer space (no chopping).
+           Bottom Margin -40px pulls the text closer since the gap is large.
         */
-        margin: -10px 0 !important;
+        margin: 0 auto -40px !important;
     }
 
     .hero-visual {
@@ -234,7 +232,7 @@
         /* Flexbox Centering */
         justify-content: center !important;
         align-items: center !important;
-        height: 300px !important;
+        height: 340px !important;
         width: 100% !important;
         position: relative;
         overflow: visible !important;
@@ -490,8 +488,8 @@
         left: auto !important;
         right: auto !important;
 
-        /* Consistent safe spacing - No Clipping */
-        margin: -10px 0 !important;
+        /* Consistent safe spacing - No Clipping at top, tighter at bottom */
+        margin: 0 auto -40px !important;
     }
 
     .about-hero .reveal {
