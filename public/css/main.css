@@ -2810,3 +2810,23 @@ a {
 .pro-card:nth-child(even)::before {
     transform: none;
 }
+
+/* === About Hero Impact Cards === */
+.hero-impact-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    min-width: 100px;
+    /* Ensure spacing */
+}
+
+.hero-impact-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.hero-impact-card .progress-ring__circle--bg {
+    stroke: rgba(20, 184, 166, 0.15);
+    /* Slightly darker track for visibility on light bg */
+}
