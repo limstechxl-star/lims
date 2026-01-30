@@ -215,9 +215,46 @@
     .orbit-lines circle,
     .orbit-lines line {
         stroke-width: 3px !important;
-        /* Make lines thicker */
         opacity: 0.8 !important;
-        /* increased opacity */
+    }
+
+    /* explicit positioning overrides for mobile scaling context */
+    .about-hero .orbit-item {
+        width: 70px !important;
+        /* Slightly larger targets on mobile */
+        height: 70px !important;
+        font-size: 1.75rem !important;
+    }
+
+    /* Re-enforce positioning for 6 items in mobile scale */
+    .about-hero .item-1 {
+        top: 40px !important;
+        left: 220px !important;
+    }
+
+    .about-hero .item-2 {
+        top: 130px !important;
+        left: 375px !important;
+    }
+
+    .about-hero .item-3 {
+        top: 310px !important;
+        left: 375px !important;
+    }
+
+    .about-hero .item-4 {
+        top: 400px !important;
+        left: 220px !important;
+    }
+
+    .about-hero .item-5 {
+        top: 310px !important;
+        left: 65px !important;
+    }
+
+    .about-hero .item-6 {
+        top: 130px !important;
+        left: 65px !important;
     }
 
     /* === Feature Blocks === */
