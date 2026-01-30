@@ -551,12 +551,27 @@
     }
 
     /* === Ecosystem === */
-    .ecosystem-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.25rem;
-    }
+    gap: 1.25rem;
+}
 
-    .feature-box {
-        padding: 1.5rem !important;
-    }
+/* === Architecture Grid Mobile === */
+.architecture-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+}
+
+.arch-card {
+    padding: 1.5rem !important;
+}
+
+.arch-icon {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.feature-box {
+    padding: 1.5rem !important;
+}
 }
