@@ -223,9 +223,10 @@
         /* 
            Math: 500px * 0.55 = 275px visual height.
            Gap is (500 - 275) / 2 = 112.5px on top and bottom.
-           margin: -50px leaves ~60px buffer for icons to "breathe" without clipping.
+           margin: -10px leaves ~100px buffer. Icons take ~70px. 
+           Result: ~30px safe visual whitespace. NO CLIPPING.
         */
-        margin: -50px 0 !important;
+        margin: -10px 0 !important;
     }
 
     .hero-visual {
@@ -489,8 +490,8 @@
         left: auto !important;
         right: auto !important;
 
-        /* Consistent spacing logic - Relaxed to prevent clipping */
-        margin: -50px 0 !important;
+        /* Consistent safe spacing - No Clipping */
+        margin: -10px 0 !important;
     }
 
     .about-hero .reveal {
