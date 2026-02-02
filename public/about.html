@@ -632,13 +632,13 @@
 
                                 /* Edge positioning overrides */
                                 .chart-tooltip.tooltip-left.visible {
-                                    transform: translate(0, -100%);
+                                    transform: translate(0, -100%) !important;
                                     /* Align left edge to point */
                                     margin-left: -5px;
                                 }
 
                                 .chart-tooltip.tooltip-right.visible {
-                                    transform: translate(-100%, -100%);
+                                    transform: translate(-100%, -100%) !important;
                                     /* Align right edge to point */
                                     margin-left: 5px;
                                 }
@@ -731,7 +731,9 @@
                                             tooltip.querySelector('.tooltip-title').textContent = title;
                                             tooltip.querySelector('.tooltip-value').textContent = value;
 
-                                            // Position logic (convert SVG coords to % or px relative to container)
+                                            // Reset classes to avoid accumulation
+                                            tooltip.className = 'chart-tooltip';
+
                                             // Determine position class based on cx
                                             if (cx <= 250) {
                                                 tooltip.classList.add('tooltip-left');
