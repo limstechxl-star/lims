@@ -635,12 +635,16 @@
                                     transform: translate(0, -100%) !important;
                                     /* Align left edge to point */
                                     margin-left: -5px;
+                                    margin-top: -20px;
+                                    /* Extra lift */
                                 }
 
                                 .chart-tooltip.tooltip-right.visible {
                                     transform: translate(-100%, -100%) !important;
                                     /* Align right edge to point */
                                     margin-left: 5px;
+                                    margin-top: -20px;
+                                    /* Extra lift */
                                 }
 
                                 .tooltip-title {
@@ -745,7 +749,7 @@
                                             const topPercent = (cy / 300) * 100;
 
                                             tooltip.style.left = leftPercent + '%';
-                                            tooltip.style.top = (topPercent - 5) + '%';
+                                            tooltip.style.top = (topPercent - 15) + '%';
 
                                             requestAnimationFrame(() => {
                                                 tooltip.classList.add('visible');
