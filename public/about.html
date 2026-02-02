@@ -568,10 +568,14 @@
                                     style="stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: drawLine 4s forwards;" />
 
                                 <!-- Points -->
-                                <circle cx="0" cy="280" r="6" fill="var(--primary)" />
-                                <circle cx="400" cy="150" r="6" fill="var(--primary)" />
-                                <circle cx="800" cy="50" r="6" fill="var(--primary)" />
-                                <circle cx="1000" cy="20" r="6" fill="var(--primary)" />
+                                <circle cx="0" cy="280" r="8" fill="var(--primary)" class="chart-point"
+                                    data-title="Initial Deployment" data-value="System Live" />
+                                <circle cx="400" cy="150" r="8" fill="var(--primary)" class="chart-point"
+                                    data-title="Q3 Optimization" data-value="40% Data Entry Reduction" />
+                                <circle cx="800" cy="50" r="8" fill="var(--primary)" class="chart-point"
+                                    data-title="Year 1 Integration" data-value="Break-even Achieved" />
+                                <circle cx="1000" cy="20" r="8" fill="var(--primary)" class="chart-point"
+                                    data-title="Platform Excellence" data-value="350% ROI" />
 
                                 <!-- Glow Area -->
                                 <path d="M0,280 Q250,250 400,150 T800,50 L1000,20 L1000,300 L0,300 Z"
@@ -584,6 +588,118 @@
                                     </linearGradient>
                                 </defs>
                             </svg>
+
+                            <!-- Tooltip Styles & Script -->
+                            <style>
+                                .chart-point {
+                                    cursor: pointer;
+                                    transition: r 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), fill 0.3s ease;
+                                    stroke: transparent;
+                                    stroke-width: 10px;
+                                    /* Increase hit area invisible */
+                                }
+
+                                .chart-point:hover {
+                                    r: 12;
+                                    fill: var(--accent);
+                                }
+
+                                .chart-tooltip {
+                                    position: absolute;
+                                    background: rgba(15, 23, 42, 0.95);
+                                    border: 1px solid var(--primary);
+                                    padding: 1rem 1.5rem;
+                                    border-radius: 8px;
+                                    pointer-events: none;
+                                    opacity: 0;
+                                    transform: translateY(10px) translateX(-50%);
+                                    transition: opacity 0.3s ease, transform 0.3s ease;
+                                    z-index: 100;
+                                    min-width: 200px;
+                                    text-align: center;
+                                    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+                                    backdrop-filter: blur(8px);
+                                }
+
+                                .chart-tooltip.visible {
+                                    opacity: 1;
+                                    transform: translateY(-100%) translateX(-50%) marginTop(-15px);
+                                }
+
+                                .tooltip-title {
+                                    display: block;
+                                    color: var(--text-tertiary);
+                                    font-size: 0.75rem;
+                                    text-transform: uppercase;
+                                    letter-spacing: 1px;
+                                    margin-bottom: 0.25rem;
+                                }
+
+                                .tooltip-value {
+                                    display: block;
+                                    color: var(--primary);
+                                    font-size: 1.1rem;
+                                    font-weight: 700;
+                                    font-family: 'Outfit', sans-serif;
+                                }
+
+                                .tooltip-arrow {
+                                    position: absolute;
+                                    bottom: -6px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    border-width: 6px 6px 0;
+                                    border-style: solid;
+                                    border-color: var(--primary) transparent transparent transparent;
+                                }
+                            </style>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', () => {
+                                    const points = document.querySelectorAll('.chart-point');
+                                    const graphContainer = document.querySelector('.graph-line');
+
+                                    // Create tooltip element
+                                    const tooltip = document.createElement('div');
+                                    tooltip.className = 'chart-tooltip';
+                                    tooltip.innerHTML = `
+                                        <span class="tooltip-title"></span>
+                                        <span class="tooltip-value"></span>
+                                        <div class="tooltip-arrow"></div>
+                                    `;
+                                    graphContainer.appendChild(tooltip);
+
+                                    points.forEach(point => {
+                                        point.addEventListener('mouseenter', (e) => {
+                                            const title = point.getAttribute('data-title');
+                                            const value = point.getAttribute('data-value');
+                                            const cx = parseFloat(point.getAttribute('cx'));
+                                            const cy = parseFloat(point.getAttribute('cy'));
+
+                                            tooltip.querySelector('.tooltip-title').textContent = title;
+                                            tooltip.querySelector('.tooltip-value').textContent = value;
+
+                                            // Position logic (convert SVG coords to % or px relative to container)
+                                            // Since SVG is responsive (viewBox), simplistic px might fail if scaled.
+                                            // But container is relative.
+                                            // Best: rely on client rects
+
+                                            // Initial rough position to prevent jump, wait for next frame or just use percent if simple
+                                            // Using percentage based on viewBox (1000x300)
+                                            const leftPercent = (cx / 1000) * 100;
+                                            const topPercent = (cy / 300) * 100;
+
+                                            tooltip.style.left = leftPercent + '%';
+                                            tooltip.style.top = (topPercent - 5) + '%'; // shift up
+
+                                            tooltip.classList.add('visible');
+                                        });
+
+                                        point.addEventListener('mouseleave', () => {
+                                            tooltip.classList.remove('visible');
+                                        });
+                                    });
+                                });
+                            </script>
                             <!-- Time Labels -->
                             <div
                                 style="display: flex; justify-content: space-between; margin-top: 2rem; color: var(--text-tertiary); font-size: 0.9rem; font-family: 'Outfit'; font-weight: 500;">
