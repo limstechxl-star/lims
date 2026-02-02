@@ -683,12 +683,19 @@
 
                                 @media (max-width: 768px) {
                                     .chart-tooltip {
-                                        min-width: 160px;
-                                        padding: 0.75rem 1rem;
+                                        min-width: auto;
+                                        max-width: 180px;
+                                        padding: 0.75rem;
+                                        white-space: normal;
                                     }
 
                                     .tooltip-value {
-                                        font-size: 0.95rem;
+                                        font-size: 0.9rem;
+                                        line-height: 1.3;
+                                    }
+
+                                    .tooltip-title {
+                                        font-size: 0.7rem;
                                     }
                                 }
                             </style>
@@ -718,19 +725,22 @@
                                             tooltip.querySelector('.tooltip-value').textContent = value;
 
                                             // Position logic (convert SVG coords to % or px relative to container)
-                                            // Since SVG is responsive (viewBox), simplistic px might fail if scaled.
-                                            // But container is relative.
-                                            // Best: rely on client rects
+                                            // Determine position class based on cx
+                                            if (cx <= 250) {
+                                                tooltip.classList.add('tooltip-left');
+                                            } else if (cx >= 750) {
+                                                tooltip.classList.add('tooltip-right');
+                                            }
 
-                                            // Initial rough position to prevent jump, wait for next frame or just use percent if simple
-                                            // Using percentage based on viewBox (1000x300)
                                             const leftPercent = (cx / 1000) * 100;
                                             const topPercent = (cy / 300) * 100;
 
                                             tooltip.style.left = leftPercent + '%';
-                                            tooltip.style.top = (topPercent - 5) + '%'; // shift up
+                                            tooltip.style.top = (topPercent - 5) + '%';
 
-                                            tooltip.classList.add('visible');
+                                            requestAnimationFrame(() => {
+                                                tooltip.classList.add('visible');
+                                            });
                                         });
 
                                         point.addEventListener('mouseleave', () => {
