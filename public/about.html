@@ -550,10 +550,12 @@
 
             <!-- Professional Line Trends -->
             <div class="chart-container reveal mt-xl" style="padding: 4rem;">
-                <div class="grid-2" style="gap: 5rem; align-items: start;">
-                    <div class="chart-main">
-                        <h3 style="margin-bottom: 2rem;">Efficiency Trajectory</h3>
-                        <div class="graph-line" style="height: 300px; position: relative;">
+                <div class="chart-stack">
+                    <!-- Chart Section -->
+                    <div class="chart-main" style="margin-bottom: 4rem;">
+                        <h3 style="margin-bottom: 3rem; text-align: center;">Efficiency Trajectory</h3>
+                        <div class="graph-line"
+                            style="height: 350px; position: relative; max-width: 900px; margin: 0 auto;">
                             <svg viewBox="0 0 1000 300" style="width: 100%; height: 100%; overflow: visible;">
                                 <!-- Grid Lines -->
                                 <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.05)" />
@@ -584,7 +586,7 @@
                             </svg>
                             <!-- Time Labels -->
                             <div
-                                style="display: flex; justify-content: space-between; margin-top: 2rem; color: var(--text-tertiary); font-size: 0.85rem; font-family: 'Outfit';">
+                                style="display: flex; justify-content: space-between; margin-top: 2rem; color: var(--text-tertiary); font-size: 0.9rem; font-family: 'Outfit'; font-weight: 500;">
                                 <span>Initial Deployment</span>
                                 <span>Q3 Optimization</span>
                                 <span>Year 1 Integration</span>
@@ -593,34 +595,51 @@
                         </div>
                     </div>
 
-                    <div class="chart-sidebar" style="padding-left: 3rem; border-left: 1px solid var(--border-color);">
-                        <h4 style="margin-bottom: 2rem; color: var(--primary); font-size: 1.25rem;">Success Benchmarks
-                        </h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 2.5rem;">
+                    <!-- Benchmarks Section -->
+                    <div class="chart-metrics"
+                        style="border-top: 1px solid var(--border-color); padding-top: 4rem; margin-top: 2rem;">
+                        <h4 style="margin-bottom: 3rem; color: var(--primary); font-size: 1.5rem; text-align: center;">
+                            Success Benchmarks</h4>
+                        <ul
+                            style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4rem; text-align: center;">
+                            <li>
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(20, 184, 166, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <i class="fa-solid fa-chart-line"
+                                        style="color: var(--primary); font-size: 1.5rem;"></i>
+                                </div>
                                 <strong
-                                    style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Manual
-                                    Entry
-                                    Reduction</strong>
-                                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Automated
+                                    style="display: block; color: var(--text-primary); font-size: 1.2rem; margin-bottom: 1rem;">Manual
+                                    Entry Reduction</strong>
+                                <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">Automated
                                     triggers in LabAx
                                     Flow eliminate 40% of repetitive data entry across sites.</p>
                             </li>
-                            <li style="margin-bottom: 2.5rem;">
+                            <li>
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(20, 184, 166, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <i class="fa-solid fa-shield-check"
+                                        style="color: var(--primary); font-size: 1.5rem;"></i>
+                                </div>
                                 <strong
-                                    style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Audit
+                                    style="display: block; color: var(--text-primary); font-size: 1.2rem; margin-bottom: 1rem;">Audit
                                     Readiness</strong>
-                                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Immutable
+                                <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">Immutable
                                     logs ensure ISO
                                     17025 compliance is maintained in real-time, reducing audit prep from weeks to
                                     hours.</p>
                             </li>
                             <li>
+                                <div
+                                    style="width: 60px; height: 60px; background: rgba(20, 184, 166, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                    <i class="fa-solid fa-sliders"
+                                        style="color: var(--primary); font-size: 1.5rem;"></i>
+                                </div>
                                 <strong
-                                    style="display: block; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem;">Asset
+                                    style="display: block; color: var(--text-primary); font-size: 1.2rem; margin-bottom: 1rem;">Asset
                                     Optimization</strong>
-                                <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">
-                                    Predictive maintenance
+                                <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">Predictive
+                                    maintenance
                                     through LabAx Edge increases instrument life-span by an average of 35%.</p>
                             </li>
                         </ul>
