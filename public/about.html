@@ -634,17 +634,17 @@
                                 .chart-tooltip.tooltip-left.visible {
                                     transform: translate(0, -100%) !important;
                                     /* Align left edge to point */
-                                    margin-left: -5px;
+                                    margin-left: -10px;
+                                    /* Pull box slightly left */
                                     margin-top: -20px;
-                                    /* Extra lift */
                                 }
 
                                 .chart-tooltip.tooltip-right.visible {
                                     transform: translate(-100%, -100%) !important;
                                     /* Align right edge to point */
-                                    margin-left: 5px;
+                                    margin-left: 10px;
+                                    /* Push box slightly right */
                                     margin-top: -20px;
-                                    /* Extra lift */
                                 }
 
                                 .tooltip-title {
@@ -677,13 +677,15 @@
 
                                 /* Arrow adjustments for edge positions */
                                 .chart-tooltip.tooltip-left .tooltip-arrow {
-                                    left: 15px;
+                                    left: 10px;
+                                    /* Align with point (margin-left -10 + 10 = 0 offset) */
                                     transform: translateX(0);
                                 }
 
                                 .chart-tooltip.tooltip-right .tooltip-arrow {
                                     left: auto;
-                                    right: 15px;
+                                    right: 10px;
+                                    /* Align with point */
                                     transform: translateX(0);
                                 }
 
