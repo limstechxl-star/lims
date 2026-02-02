@@ -309,20 +309,39 @@
             font-weight: 700;
             font-size: 1rem;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
             display: flex;
             align-items: center;
             justify-content: flex-start;
             gap: 0.75rem;
+            cursor: pointer;
+            width: 100%;
         }
 
         .faq-question i {
             color: #14B8A6;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
         }
 
         .faq-answer {
             color: var(--text-secondary);
             line-height: 1.7;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 15rem;
+            /* Arbitrary large height */
+            opacity: 1;
+            margin-top: 1rem;
         }
 
         /* Responsive */
