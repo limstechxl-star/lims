@@ -608,94 +608,101 @@
                                     position: absolute;
                                     background: rgba(15, 23, 42, 0.95);
                                     border: 1px solid var(--primary);
-                                    padding: 1rem 1.5rem;
-                                    border-radius: 8px;
+                                    padding: 0.75rem 1rem;
+                                    /* Compact padding */
+                                    border-radius: 6px;
                                     pointer-events: none;
                                     opacity: 0;
                                     transform: translateY(10px) translateX(-50%);
-                                    transition: opacity 0.3s ease, transform 0.3s ease;
-                                    z-index: 100;
-                                    min-width: 200px;
+                                    transition: opacity 0.2s ease, transform 0.2s ease;
+                                    z-index: 1000;
+                                    /* High z-index */
+                                    min-width: 140px;
                                     text-align: center;
-                                    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+                                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
                                     backdrop-filter: blur(8px);
                                 }
 
                                 .chart-tooltip.visible {
                                     opacity: 1;
                                     transform: translate(-50%, -100%);
-                                    margin-top: -15px;
+                                    margin-top: -12px;
+                                    /* Reduced gap */
                                 }
 
                                 /* Edge positioning overrides */
                                 .chart-tooltip.tooltip-left.visible {
                                     transform: translate(0, -100%);
                                     /* Align left edge to point */
-                                    margin-left: -10px;
-                                    /* Slight offset */
+                                    margin-left: -5px;
                                 }
 
                                 .chart-tooltip.tooltip-right.visible {
                                     transform: translate(-100%, -100%);
                                     /* Align right edge to point */
-                                    margin-left: 10px;
-                                    /* Slight offset */
+                                    margin-left: 5px;
                                 }
 
                                 .tooltip-title {
                                     display: block;
                                     color: var(--text-tertiary);
-                                    font-size: 0.75rem;
+                                    font-size: 0.7rem;
                                     text-transform: uppercase;
-                                    letter-spacing: 1px;
-                                    margin-bottom: 0.25rem;
+                                    letter-spacing: 0.5px;
+                                    margin-bottom: 0.2rem;
                                 }
 
                                 .tooltip-value {
                                     display: block;
                                     color: var(--primary);
-                                    font-size: 1.1rem;
-                                    font-weight: 700;
+                                    font-size: 1rem;
+                                    font-weight: 600;
                                     font-family: 'Outfit', sans-serif;
+                                    line-height: 1.2;
                                 }
 
                                 .tooltip-arrow {
                                     position: absolute;
-                                    bottom: -6px;
+                                    bottom: -5px;
                                     left: 50%;
                                     transform: translateX(-50%);
-                                    border-width: 6px 6px 0;
+                                    border-width: 5px 5px 0;
                                     border-style: solid;
                                     border-color: var(--primary) transparent transparent transparent;
                                 }
 
                                 /* Arrow adjustments for edge positions */
                                 .chart-tooltip.tooltip-left .tooltip-arrow {
-                                    left: 20px;
+                                    left: 15px;
                                     transform: translateX(0);
                                 }
 
                                 .chart-tooltip.tooltip-right .tooltip-arrow {
                                     left: auto;
-                                    right: 20px;
+                                    right: 15px;
                                     transform: translateX(0);
                                 }
 
                                 @media (max-width: 768px) {
+                                    .chart-container {
+                                        padding: 1.5rem !important;
+                                        /* Fix excessive padding */
+                                    }
+
                                     .chart-tooltip {
                                         min-width: auto;
-                                        max-width: 180px;
-                                        padding: 0.75rem;
+                                        max-width: 160px;
+                                        /* Constrain width */
+                                        padding: 0.5rem 0.75rem;
                                         white-space: normal;
                                     }
 
                                     .tooltip-value {
-                                        font-size: 0.9rem;
-                                        line-height: 1.3;
+                                        font-size: 0.85rem;
                                     }
 
                                     .tooltip-title {
-                                        font-size: 0.7rem;
+                                        font-size: 0.65rem;
                                     }
                                 }
                             </style>
