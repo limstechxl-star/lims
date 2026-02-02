@@ -627,6 +627,21 @@
                                     margin-top: -15px;
                                 }
 
+                                /* Edge positioning overrides */
+                                .chart-tooltip.tooltip-left.visible {
+                                    transform: translate(0, -100%);
+                                    /* Align left edge to point */
+                                    margin-left: -10px;
+                                    /* Slight offset */
+                                }
+
+                                .chart-tooltip.tooltip-right.visible {
+                                    transform: translate(-100%, -100%);
+                                    /* Align right edge to point */
+                                    margin-left: 10px;
+                                    /* Slight offset */
+                                }
+
                                 .tooltip-title {
                                     display: block;
                                     color: var(--text-tertiary);
@@ -652,6 +667,29 @@
                                     border-width: 6px 6px 0;
                                     border-style: solid;
                                     border-color: var(--primary) transparent transparent transparent;
+                                }
+
+                                /* Arrow adjustments for edge positions */
+                                .chart-tooltip.tooltip-left .tooltip-arrow {
+                                    left: 20px;
+                                    transform: translateX(0);
+                                }
+
+                                .chart-tooltip.tooltip-right .tooltip-arrow {
+                                    left: auto;
+                                    right: 20px;
+                                    transform: translateX(0);
+                                }
+
+                                @media (max-width: 768px) {
+                                    .chart-tooltip {
+                                        min-width: 160px;
+                                        padding: 0.75rem 1rem;
+                                    }
+
+                                    .tooltip-value {
+                                        font-size: 0.95rem;
+                                    }
                                 }
                             </style>
                             <script>
