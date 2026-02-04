@@ -73,7 +73,7 @@ body {
     content: '';
     width: 4px;
     height: 1.5rem;
-    background: linear-gradient(135deg, #14B8A6, #0d9488);
+    background: linear-gradient(135deg, #6b21a8, #581c87);
     border-radius: 2px;
 }
 
@@ -123,8 +123,8 @@ input:focus,
 select:focus,
 textarea:focus {
     outline: none;
-    border-color: #14B8A6;
-    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    border-color: #6b21a8;
+    box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.1);
 }
 
 input::placeholder,
@@ -150,8 +150,8 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background: #14B8A6;
-    border-color: #14B8A6;
+    background: #6b21a8;
+    border-color: #6b21a8;
 }
 
 input[type="checkbox"]:checked::after {
@@ -165,7 +165,7 @@ input[type="checkbox"]:checked::after {
 }
 
 input[type="checkbox"]:hover {
-    border-color: #14B8A6;
+    border-color: #6b21a8;
 }
 
 /* Checkbox Group */
@@ -211,15 +211,15 @@ input[type="date"] {
 
 input[type="date"]:focus {
     outline: none;
-    border-color: #14B8A6;
-    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+    border-color: #6b21a8;
+    box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.1);
 }
 
 /* Submit Button */
 .btn-submit {
     width: 100%;
     padding: 1rem 2rem;
-    background: linear-gradient(135deg, #14B8A6 0%, #0d9488 100%);
+    background: linear-gradient(135deg, #6b21a8 0%, #581c87 100%);
     color: white;
     border: none;
     border-radius: 12px;
@@ -233,7 +233,7 @@ input[type="date"]:focus {
 
 .btn-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 12px 24px rgba(107, 33, 168, 0.3);
 }
 
 .btn-submit:active {
@@ -367,14 +367,14 @@ input[type="date"]:focus {
 .info-icon {
     width: 48px;
     height: 48px;
-    background: linear-gradient(135deg, #F0FDFA 0%, #CCFBF1 100%);
+    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     font-size: 1.5rem;
-    color: #14B8A6;
+    color: #6b21a8;
 }
 
 .info-list strong {
@@ -393,7 +393,7 @@ input[type="date"]:focus {
 
 /* Contact Info */
 .contact-info {
-    background: linear-gradient(135deg, #F0FDFA 0%, #fff 100%);
+    background: linear-gradient(135deg, #f3e8ff 0%, #fff 100%);
     border-radius: 24px;
     padding: 2rem;
     border: 1px solid #E2E8F0;
@@ -419,7 +419,7 @@ input[type="date"]:focus {
 }
 
 .contact-item i {
-    color: #14B8A6;
+    color: #6b21a8;
     font-size: 1.125rem;
 }
 

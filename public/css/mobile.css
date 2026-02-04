@@ -140,8 +140,105 @@
 
     .nav-link:hover,
     .nav-link.active {
-        background: rgba(20, 184, 166, 0.1);
+        background: rgba(107, 33, 168, 0.1);
     }
+
+    /* ... unchanged content ... */
+
+    /* === Hero Section - MOBILE ONLY === */
+    .hero {
+        min-height: auto !important;
+        padding: 2rem 0 !important;
+        /* Remove side padding from section, rely on container */
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ... unchanged content ... */
+
+    /* Orbit - Optimized for mobile */
+    .orbit-container {
+        /* Scale down 500px to ~275px */
+        transform: scale(0.55) !important;
+        transform-origin: center center !important;
+
+        /* Force rigidly 500px wide, DO NOT SHRINK or coordinates break */
+        width: 500px !important;
+        flex-shrink: 0 !important;
+        position: relative;
+
+        /* Reset positioning hacks */
+        left: auto !important;
+        right: auto !important;
+
+        /* 
+           Safety Fix: Top Margin 0 ensures full buffer space (no chopping).
+           Bottom Margin -40px pulls the text closer since the gap is large.
+        */
+        margin: 0 auto -40px !important;
+    }
+
+    /* ... unchanged content ... */
+
+    .orbit-item {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: rgba(243, 232, 255, 0.9);
+        /* Very light purple */
+        border: 1px solid rgba(107, 33, 168, 0.3);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.5rem;
+        z-index: 5;
+        box-shadow: 0 4px 15px rgba(107, 33, 168, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .orbit-item:hover {
+        transform: scale(1.15);
+        background: white;
+        border-color: var(--primary);
+        box-shadow: 0 0 20px rgba(107, 33, 168, 0.3);
+        z-index: 15;
+    }
+
+    /* ... unchanged content ... */
+
+    .hero-badge {
+        background: rgba(107, 33, 168, 0.1) !important;
+        border: 1px solid rgba(107, 33, 168, 0.2) !important;
+        color: var(--primary-dark) !important;
+    }
+
+    .hero h1 {
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-dark) 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;
+        box-shadow: 0 4px 16px rgba(107, 33, 168, 0.3) !important;
+    }
+
+    .orbit-center {
+        box-shadow: 0 0 50px rgba(107, 33, 168, 0.2) !important;
+        border: 1px solid rgba(107, 33, 168, 0.1) !important;
+    }
+
+    .orbit-center i {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+
+
 
     .btn-demo {
         width: 100%;
