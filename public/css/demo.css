@@ -328,7 +328,7 @@ input[type="date"]:focus {
 }
 
 .info-card {
-    background: #fff;
+    background: var(--surface);
     border-radius: 24px;
     padding: 2.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -393,7 +393,7 @@ input[type="date"]:focus {
 
 /* Contact Info */
 .contact-info {
-    background: linear-gradient(135deg, #f3e8ff 0%, #fff 100%);
+    background: var(--surface);
     border-radius: 24px;
     padding: 2rem;
     border: 1px solid #E2E8F0;
