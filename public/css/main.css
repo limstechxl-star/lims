@@ -57,11 +57,12 @@
 }
 
 /* === Dark Mode Variables === */
+/* === Dark Mode Variables (Premium Deep Lab Theme) === */
 body.dark-mode {
-    --bg-primary: #0f172a;
+    --bg-primary: #020617;
+    /* Slate 950 (Deepest) */
+    --bg-secondary: #0f172a;
     /* Slate 900 */
-    --bg-secondary: #020617;
-    /* Slate 950 */
     --bg-tertiary: #1e293b;
     /* Slate 800 */
     --surface: #1e293b;
@@ -70,26 +71,29 @@ body.dark-mode {
 
     --text-primary: #f8fafc;
     /* Slate 50 */
-    --text-secondary: #cbd5e1;
-    /* Slate 300 */
-    --text-tertiary: #94a3b8;
-    /* Slate 400 */
+    --text-secondary: #94a3b8;
+    /* Slate 400 (Softer contrast) */
+    --text-tertiary: #64748b;
+    /* Slate 500 */
 
     --border-color: #334155;
     /* Slate 700 */
 
-    /* Accent adjustments for dark mode */
-    --primary: #c084fc;
-    /* Light Purple (User Requested) */
-    --primary-dark: #a855f7;
-    /* Slightly darker than primary */
-    --primary-light: rgba(192, 132, 252, 0.1);
-    /* Low opacity purple */
+    /* Premium Accent Palette */
+    --primary: #A855F7;
+    /* Purple 500 - Vibrant Electric */
+    --primary-dark: #9333ea;
+    /* Purple 600 */
+    --primary-light: rgba(168, 85, 247, 0.15);
+    /* Subtle localized glow */
+    --accent: #c084fc;
+    /* Purple 400 - Highlights */
 
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+    /* Depth & Glows (Replacing flat shadows) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 0 12px rgba(168, 85, 247, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.15);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.55), 0 0 30px rgba(168, 85, 247, 0.2);
 }
 
 /* === Reset & Base === */
