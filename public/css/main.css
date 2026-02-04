@@ -2490,10 +2490,10 @@ body.dark-mode .hero {
 }
 
 .pro-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--surface);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--border-color);
     padding: 2.5rem;
     border-radius: var(--radius-xl);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
@@ -2508,10 +2508,10 @@ body.dark-mode .hero {
 
 .pro-card:hover {
     transform: translateY(-8px);
-    background: white;
+    background: var(--bg-secondary);
     box-shadow: 0 20px 40px -5px rgba(107, 33, 168, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
     /* Premium depth */
-    border-color: rgba(107, 33, 168, 0.3);
+    border-color: var(--primary);
 }
 
 .pro-header {
