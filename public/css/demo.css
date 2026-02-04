@@ -1,15 +1,15 @@
 /* ============================================
-   Demo Request Page Styles - Light Theme
+   Demo Request Page Styles - Adaptive Theme
    ============================================ */
 
 body {
-    background-color: #F8FAFC;
+    background-color: var(--bg-primary);
 }
 
 .demo-section {
     min-height: 100vh;
     padding: 6rem 2rem 4rem;
-    background: #F8FAFC;
+    background: var(--bg-primary);
 }
 
 .demo-container {
@@ -23,11 +23,11 @@ body {
 
 /* Form Container */
 .demo-form-container {
-    background: #fff;
+    background: var(--surface);
     border-radius: 24px;
     padding: 3rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid #E2E8F0;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
 }
 
 .demo-header {
@@ -52,7 +52,7 @@ body {
 .form-section {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .form-section:last-of-type {
