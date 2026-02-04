@@ -51,10 +51,45 @@
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
 
-    /* Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === Dark Mode Variables === */
+body.dark-mode {
+    --bg-primary: #0f172a;
+    /* Slate 900 */
+    --bg-secondary: #020617;
+    /* Slate 950 */
+    --bg-tertiary: #1e293b;
+    /* Slate 800 */
+    --surface: #1e293b;
+    /* Slate 800 */
+    --bg-darker: #020617;
+
+    --text-primary: #f8fafc;
+    /* Slate 50 */
+    --text-secondary: #cbd5e1;
+    /* Slate 300 */
+    --text-tertiary: #94a3b8;
+    /* Slate 400 */
+
+    --border-color: #334155;
+    /* Slate 700 */
+
+    /* Accent adjustments for dark mode */
+    --primary: #c084fc;
+    /* Light Purple (User Requested) */
+    --primary-dark: #a855f7;
+    /* Slightly darker than primary */
+    --primary-light: rgba(192, 132, 252, 0.1);
+    /* Low opacity purple */
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
 /* === Reset & Base === */
@@ -2836,4 +2871,25 @@ a {
 .hero-impact-card .progress-container,
 .hero-impact-card .progress-ring {
     display: none !important;
+}
+
+/* === Theme Toggle Button === */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--primary);
 }
