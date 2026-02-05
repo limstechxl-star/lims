@@ -167,8 +167,10 @@
         border: 1px solid var(--border-color);
         background: var(--surface);
         /* Ensure opaque background like buttons */
-        font-size: 1.125rem;
-        font-weight: 500;
+        font-size: 1rem;
+        /* Match .btn-demo font size */
+        font-weight: 600;
+        /* Match .btn-demo font weight */
         color: var(--text-secondary);
         display: flex;
         /* Ensure flex behavior */
@@ -176,8 +178,8 @@
         /* Vertical center */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         /* Subtle shadow to match button depth */
-        margin-top: 0.5rem;
-        /* Explicit margin to separate from demo button */
+        margin-top: 0;
+        /* Let container handle margin */
         transition: all 0.3s ease;
     }
 
