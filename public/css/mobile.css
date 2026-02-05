@@ -158,7 +158,8 @@
         width: 100%;
         border-radius: 0.5rem;
         padding: 0.75rem 1.25rem;
-        justify-content: space-between !important;
+        justify-content: center !important;
+        gap: 0.75rem;
         border: 1px solid var(--border-color);
         background: transparent;
         font-size: 1.125rem;
