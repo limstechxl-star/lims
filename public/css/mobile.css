@@ -156,15 +156,24 @@
 
     .mobile-theme-toggle {
         width: 100%;
-        border-radius: 0.5rem;
-        padding: 0.75rem 1.25rem;
+        border-radius: 0.75rem;
+        /* Match --radius-lg */
+        padding: 1rem 1.5rem;
+        /* Match .btn-demo padding */
+        min-height: 48px;
+        /* Match .btn-demo min-height */
         justify-content: center !important;
         gap: 0.75rem;
         border: 1px solid var(--border-color);
-        background: transparent;
+        background: var(--surface);
+        /* Ensure opaque background like buttons */
         font-size: 1.125rem;
         font-weight: 500;
         color: var(--text-secondary);
+        display: flex;
+        /* Ensure flex behavior */
+        align-items: center;
+        /* Vertical center */
     }
 
 
