@@ -252,26 +252,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Theme Toggle Logic
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const body = document.body;
-    const icon = themeToggle ? themeToggle.querySelector('i') : null;
 
-    // Check for saved user preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        body.classList.add('dark-mode');
-        if (icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-
-            // Update Icon
+    // Function to update all toggle icons
+    function updateToggleIcons(isDark) {
+        themeToggles.forEach(btn => {
+            const icon = btn.querySelector('i');
             if (icon) {
                 if (isDark) {
                     icon.classList.remove('fa-moon');
@@ -281,11 +268,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     icon.classList.add('fa-moon');
                 }
             }
+        });
+    }
+
+    // Check for saved user preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        updateToggleIcons(true);
+    }
+
+    // Add click event to ALL toggle buttons
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+
+            updateToggleIcons(isDark);
 
             // Save Preference
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
         });
-    }
+    });
 
     console.log('LabAx website initialized successfully! 🔬');
 });

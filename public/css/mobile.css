@@ -143,6 +143,36 @@
         background: rgba(107, 33, 168, 0.1);
     }
 
+    /* Mobile Theme Toggle Visibility */
+    .desktop-theme-toggle {
+        display: none !important;
+    }
+
+    .mobile-only-toggle-item {
+        display: block !important;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .mobile-theme-toggle {
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        justify-content: space-between !important;
+        border: 1px solid var(--border-color);
+        background: transparent;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+
+
+    .mobile-theme-toggle:hover {
+        background: rgba(107, 33, 168, 0.1);
+        color: var(--primary);
+    }
+
     /* ... unchanged content ... */
 
     /* === Hero Section - MOBILE ONLY === */
