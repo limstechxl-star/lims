@@ -151,7 +151,8 @@
     .mobile-only-toggle-item {
         display: block !important;
         width: 100%;
-        margin-top: 0.5rem;
+        margin-top: 0;
+        /* Remove wrapper margin to let button handle it */
     }
 
     .mobile-theme-toggle {
