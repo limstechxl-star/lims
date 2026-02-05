@@ -179,8 +179,8 @@
         /* Vertical center */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         /* Subtle shadow to match button depth */
-        margin-top: 0;
-        /* Let container handle margin */
+        margin-top: 1rem;
+        /* Match .btn-demo spacing */
         transition: all 0.3s ease;
     }
 
